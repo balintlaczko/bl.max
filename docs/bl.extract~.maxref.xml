@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.extract~">
+
+	<digest>
+		Extract part of a frequency range
+	</digest>
+	
+	<description>
+		Splits the incoming audio into an arbitrary number of perceptually equal-width 
+		frequency bands and outputs a chosen one. It is basically a timesaver combination 
+		of a bl.split~ and an bl.mc.channel~.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">fft</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>Signal to extract a frequency band from</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>Extracted frequency band</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="bands" optional="0" type="long">
+			<digest>Number of frequency bands to divide the spectrum.</digest>
+		</objarg>
+		<objarg name="chosen-band" optional="0" type="long">
+			<digest>The the band to extract</digest>
+			<description>The (1-based) index of the frequency band to extract from the spectrum (from the total number of bands specified by the first argument).</description>
+		</objarg>
+		<objarg name="fft-size" optional="0" type="long">
+			<digest>The FFT window size.</digest>
+			<description>The FFT window size. Use only numbers that are a power of 2, like 512, 1024, 2048, etc.</description>
+		</objarg>
+	</objarglist>
+	
+    <!--ATTRIBUTES-->
+    <attributelist>
+        <attribute name='ramp' get='1' set='1' type='long' size='1' >
+            <digest>The ramp time in milliseconds when changing band</digest>
+            <description>Defines the time to fade between bands/channels. The default is 10 ms.</description>
+        </attribute>
+    </attributelist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				The band to extract
+			</digest>
+			<description>
+				The (1-based) index of the frequency band to extract from the spectrum (from the total number of bands specified by the first argument).
+			</description>
+		</method>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.split~"/>
+		<seealso name="bl.mc.channel~"/>
+		<seealso name="bl.directivity.shaper~"/>
+		<seealso name="pfft~"/>
+	</seealsolist>
+	
+</c74object>

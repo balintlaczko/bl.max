@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.splitext">
+
+	<digest>
+		Separate paths from filenames and extensions
+	</digest>
+	
+	<description>
+		Separates paths, filenames and file extensions.  Folder strings pass through the last outlet. 
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="symbol">
+			<digest>Path to the file as a symbol</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="symbol">
+			<digest>Only path if input is file</digest>
+		</outlet>
+		<outlet id="1" type="symbol">
+			<digest>Filename with extension if input is file</digest>
+		</outlet>
+		<outlet id="2" type="symbol">
+			<digest>Filename without extension if input is file</digest>
+		</outlet>
+		<outlet id="3" type="symbol">
+			<digest>Only extension (with dot) if input is file</digest>
+		</outlet>
+		<outlet id="4" type="symbol">
+			<digest>Path if input is folder (just passed through)</digest>
+		</outlet>
+	</outletlist>
+
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="path">
+			<digest>
+				A file path as a symbol.
+			</digest>
+			<description>
+				Pass an absolute file path as a single symbol. Works well with the dropfile object.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="absolutepath"/>
+		<seealso name="conformpath"/>
+		<seealso name="strippath"/>
+		<seealso name="regexp"/>
+	</seealsolist>
+	
+</c74object>

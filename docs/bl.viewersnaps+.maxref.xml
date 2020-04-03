@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.viewersnaps+">
+
+	<digest>
+		Snapshots for spat5.viewer or spat5.oper with gen
+	</digest>
+	
+	<description>
+		Provides an easy-to-acces interface to storing, recalling and interpolating between 
+		snapshots of positions of objects in a spat5.viewer of spat5.oper. It is similar to 
+		bl.viewersnaps but rather than driven by a js script, this uses a gen script. This enables 
+		using it in the scheduler (high priority) thread and results in a general speed boost. 
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">spat5</metadata>
+		<metadata name="tag">viewersnaps</metadata>
+		<metadata name="tag">snapshot</metadata>
+		<metadata name="tag">interpolation</metadata>
+		<metadata name="tag">position</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>Messages from the dump outlet of a spat5.viewer</digest>
+		</inlet>
+		<inlet id="1" type="symbol/list">
+			<digest>Methods: store, recall, import, export, xsnapshot</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>Messages to the spat5.viewer</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="store">
+			<arglist>
+				<arg name="snapshot-index" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Store current positions
+			</digest>
+			<description>
+				Store current positions of every source and speaker in the spat5.viewer.
+			</description>
+		</method>
+		<method name="recall">
+			<arglist>
+				<arg name="snapshot-index" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Recall a previously stored snapshot
+			</digest>
+		</method>
+		<method name="import">
+			<digest>
+				Import snapshots from file
+			</digest>
+			<description>
+				Import a group of snapshots into the internal dict from a JSON or YAML file.
+			</description>
+		</method>
+		<method name="export">
+			<digest>
+				Save all snapshots into file
+			</digest>
+			<description>
+				Save all snapshots (ie. the content of the internal dict) into a JSON or YAML file.
+			</description>
+		</method>
+		<method name="xsnapshot">
+			<arglist>
+				<arg name="from-snapshot" optional="0" type="long" />
+				<arg name="to-snapshot" optional="0" type="long" />
+				<arg name="interp-ratio" optional="0" type="float" />
+			</arglist>
+			<digest>
+				Interpolate between two stored snapshots
+			</digest>
+			<description>
+				Linearly interpolate between two stored snapshots based on an interpolation ratio between 0 and 1.
+				When the ratio is 0, the output will be identical to the snapshot referenced as the first argument.
+				When the ratio is 1, the output will be identical to the snapshot referenced as the second argument.
+			</description>
+		</method>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.viewersnaps"/>
+		<seealso name="bl.dict.interpolate"/>
+		<seealso name="spat5.viewer"/>
+		<seealso name="spat5.oper"/>
+	</seealsolist>
+	
+</c74object>

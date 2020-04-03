@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.dict.isempty">
+
+	<digest>
+		Check if a dictionary is empty
+	</digest>
+	
+	<description>
+		The abstraction returns 1 if the dict is empty, and 0 if the dict is not empty. 
+		The dictionary can either be specified as an argument, or simply passed to the abstraction.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">dict</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang/dictionary">
+			<digest>Bang/dictionary: check if dictionary is empty.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="long">
+			<digest>1 if the dictionary is empty, 0 otherwise.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="1" type="symbol">
+			<digest>The name of the dictionary to check.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Bang to check if dictionary is empty.
+			</digest>
+			<description>
+				Bang to check if dictionary is empty.
+			</description>
+		</method>
+		<method name="dictionary">
+			<digest>
+				Pass a dictionary to check whether it is empty.
+			</digest>
+			<description>
+				Pass a dictionary to check whether it is empty.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="dict"/>
+		<seealso name="dict.view"/>
+	</seealsolist>
+	
+</c74object>

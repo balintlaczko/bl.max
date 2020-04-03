@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.keylatch">
+
+	<digest>
+		Toggle with pressing and releasing a key.
+	</digest>
+	
+	<description>
+		Outputs 1 while a key is pressed down, and 0 when it is released. 
+		It is essentially a simple timesaver combination of key and keyup.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="long">
+			<digest>1 while the key is being pressed, 0 when it is released.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="key" optional="0" type="long">
+			<digest>The ASCII code of the key to watch.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="key"/>
+		<seealso name="keyup"/>
+	</seealsolist>
+	
+</c74object>

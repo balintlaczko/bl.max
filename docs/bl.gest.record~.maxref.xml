@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.gest.record~">
+
+	<digest>
+		Record gestures into a polybuffer~
+	</digest>
+	
+	<description>
+		Tool to record uni- or multivariate time series sequences into audio buffers. 
+		After you switch on the device, it is listening to incoming arrays of features, 
+		and records them into a polybuffer~. If you stayed inactive for the amount of the 
+		"waittime" (ms) the device will think that the gesture is over, terminating the recording. 
+		If you want to build a large database of short gestures, use a short waittime, like 500 ms, 
+		if you would rather record longer phrases with intermittent pauses inside, choose a longer 
+		wittime, like 3000-4000 ms.
+		<br/>
+		The benefit of recording gestures into audio buffers is that you can have better time precision, 
+		the possibility to record extremely long sequences, and use the synergy with some built-in 
+		Max objects, such as simple buffer~-based playback tools, such as play~, wave~ or groove~.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">gesture</metadata>
+		<metadata name="tag">capture</metadata>
+		<metadata name="tag">record</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/list">
+			<digest>Messages to interact with the device</digest>
+			<description>
+			1 to switch on device ("listening"), 0 to switch it off.
+			<br/>
+			waittime: Specify the time of inactivity to be used to end a particular recording.
+			Default is 2000 ms.
+			<br/>
+			rate: The rate the incoming data stream is sampled once the recording has started.
+			Default is 10 ms.
+			</description>
+		</inlet>
+		<inlet id="1" type="long/float/list">
+			<digest>The stream of features we want to record.</digest>
+			<description>
+			The stream of features we want to record. The type of the data can be integer and float numbers.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="long">
+			<digest>Number of datapoints used in the last finished recording.</digest>
+		</outlet>
+		<outlet id="1" type="long">
+			<digest>Recording status (0 or 1).</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				1 to switch on device ("listening"), 0 to switch it off.
+			</digest>
+			<description>
+				1 to switch on device ("listening"), 0 to switch it off.
+			</description>
+		</method>
+
+		<method name="waittime">
+			<arglist>
+				<arg name="waiting-time" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Wait this much time (ms) before ending current recording if nothing happens.
+			</digest>
+			<description>
+				Specify the time of inactivity to be used to end a particular recording.
+				Default is 2000 ms.
+			</description>
+		</method>
+
+		<method name="rate">
+			<arglist>
+				<arg name="sampling-rate" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Sample incoming data at every N milliseconds.
+			</digest>
+			<description>
+				The rate the incoming data stream is sampled once the recording has started.
+				Default is 10 ms.
+			</description>
+		</method>
+
+	</methodlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The name of the polybuffer~ to store recorded gestures in.</digest>
+		</objarg>
+		<objarg name="features" optional="0" type="long">
+			<digest>The number of features to record at each data point. (The length of the list sent to the right inlet.)</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.gest.play~"/>
+		<seealso name="bl.gest.capture"/>
+		<seealso name="polybuffer~"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,215 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 3,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 102.0, 131.0, 611.0, 702.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 98.0, 145.0, 332.0, 22.0 ],
+					"text" : "in 6 @comment \"reference point's Y coordinate (for outlet 2)\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 75.0, 114.0, 332.0, 22.0 ],
+					"text" : "in 5 @comment \"reference point's X coordinate (for outlet 2)\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 34.0, 733.0, 509.0, 22.0 ],
+					"text" : "out 2 @comment \"compensated yaw angle so the source always 'looks at' the reference point\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 58.0, 85.0, 220.0, 22.0 ],
+					"text" : "in 4 @comment \"source's Y coordinate\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 42.0, 59.0, 223.0, 22.0 ],
+					"text" : "in 3 @comment \"source's  X coordinate\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "History fixedAzim(0);\r\nHistory srcAzim(0);\r\nHistory srcPosX(0);\r\nHistory srcPosY(0);\r\nHistory refPosX(0);\r\nHistory refPosY(0);\r\nHistory tanYaw(0);\r\n\r\nfixedAzim = in1;\r\nsrcAzim = in2;\r\nsrcPosX = in3;\r\nsrcPosY = in4;\r\nrefPosX = in5;\r\nrefPosY = in6;\r\n\r\nyawfixed = ((fixedAzim + 180) - srcAzim) % 360;\r\n\r\ndistX = refPosX - srcPosX;\r\ndistY = refPosY - srcPosY;\r\ndistYDir = distY >= 0;\r\n\r\nif (distY == 0) {\r\n\tif (distX >= 0) {\r\n\t\ttanYaw = tan(0);\r\n\t} else {\r\n\t\ttanYaw = tan(-0.5*PI);\r\n\t}\r\n} else {\r\n\ttanYaw = distX / distY;\r\n}\r\n\r\nyaw = ((atan(tanYaw) / PI * 180) + (distYDir * 180) - srcAzim) % 360;\r\n\r\nout1 = yawfixed;\r\nout2 = yaw;",
+					"fontface" : 0,
+					"fontname" : "Lucida Console",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 6,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 9.0, 195.0, 579.0, 483.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 9.0, 5.0, 442.0, 22.0 ],
+					"text" : "in 1 @comment \"the azimuth angle where the yaw should be fixated (for outlet 1)\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 23.0, 32.0, 194.0, 22.0 ],
+					"text" : "in 2 @comment \"source's azimuth\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 9.0, 683.0, 464.0, 22.0 ],
+					"text" : "out 1 @comment \"compensated yaw angle for corresponding azimuth given at inlet 1\""
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"midpoints" : [ 32.5, 180.0, 130.5, 180.0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"midpoints" : [ 578.5, 720.0, 43.5, 720.0 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 2 ],
+					"midpoints" : [ 51.5, 180.0, 242.5, 180.0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 3 ],
+					"midpoints" : [ 67.5, 180.0, 354.5, 180.0 ],
+					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 4 ],
+					"midpoints" : [ 84.5, 180.0, 466.5, 180.0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 5 ],
+					"midpoints" : [ 107.5, 180.0, 578.5, 180.0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+ ]
+	}
+
+}

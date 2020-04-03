@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.sourceline">
+
+	<digest>
+		Align sources on a line
+	</digest>
+	
+	<description>
+		Aligns an arbitrary number of sources on a line between the first and the 
+		last source index in the order defined as arguments.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">spat</metadata>
+		<metadata name="tag">sourceline</metadata>
+		<metadata name="tag">source</metadata>
+		<metadata name="tag">line</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>Position messages from a spt5.viewer of spat5.oper</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>Position messages to a spt5.viewer of spat5.oper</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="sources" optional="0" type="list">
+			<digest>A list of source indices which should form a line.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.dict.interpolate"/>
+		<seealso name="spat5.viewer"/>
+		<seealso name="spat5.oper"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.getrange">
+
+	<digest>
+		Get the range of a number stream
+	</digest>
+	
+	<description>
+		Outputs the running range of a number stream. The numbers can be passed as integers, floats or lists.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">list</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="float/long/list">
+			<digest>The number stream whose range we want to find out.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>The running minimum and the maximum of the range.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="float">
+			<digest>
+				The float number stream whose running range should be kept track of.
+			</digest>
+			<description>
+				The float number stream whose running range should be kept track of.
+			</description>
+		</method>
+		<method name="long">
+			<digest>
+				The integer number stream whose running range should be kept track of.
+			</digest>
+			<description>
+				The integer number stream whose running range should be kept track of.
+			</description>
+		</method>
+		<method name="list">
+			<digest>
+				The list of floats or integers whose range should be detected.
+			</digest>
+			<description>
+				The list of floats or integers whose range should be detected.
+			</description>
+		</method>
+		<method name="reset">
+			<digest>
+				Reset the memory of the running range.
+			</digest>
+			<description>
+				Reset the memory of the running range.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.genlist"/>
+		<seealso name="bl.randlist"/>
+		<seealso name="bl.indexof"/>
+		<seealso name="peak"/>
+		<seealso name="trough"/>
+		<seealso name="minimum"/>
+		<seealso name="maximum"/>
+		<seealso name="zl"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.split~">
+
+	<digest>
+		Split an audio stream into frequency bands
+	</digest>
+	
+	<description>
+		Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands,
+		and outputs them as a multichannel signal.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">fft</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal">
+			<digest>Signal to split up</digest>
+			<description>Signal to split into frequency bands.</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="mc.signal">
+			<digest>The frequency bands as a multichannel signal.</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="bands" optional="0" type="long">
+			<digest>Number of frequency bands/output channels.</digest>
+		</objarg>
+		<objarg name="fft-size" optional="0" type="long">
+			<digest>The FFT window size.</digest>
+			<description>The FFT window size. Use only numbers that are a power of 2, like 512, 1024, 2048, etc.</description>
+		</objarg>
+		<objarg name="fft-overlap" optional="0" type="long">
+			<digest>The FFT overlap amount.</digest>
+			<description>The FFT overlap amount. 4 works well for most cases.</description>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.extract~"/>
+		<seealso name="bl.directivity.shaper~"/>
+		<seealso name="pfft~"/>
+	</seealsolist>
+	
+</c74object>

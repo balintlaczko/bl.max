@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.looper~">
+
+	<digest>
+		Generic click-free buffer playback tool
+	</digest>
+	
+	<description>
+		Can be in many ways considered to be similar to a groove~, with some enhancements in certain areas. 
+		It is notably better when it comes to "scrubbing", ie. changing the loop start- and end-points 
+		quickly and erratically. There is built-in option for fading around loop bounds, and there is also 
+		a quick fading mechanism to avoid clicks when scrubbing/jumping to another region of the buffer.
+		<br/>
+		Note: be careful with samplerates, this won't adapt to files having different SR from the current 
+		SR of the audio interface.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">audio</metadata>
+		<metadata name="tag">playback</metadata>
+		<metadata name="tag">loop</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long">
+			<digest>Toggle playback</digest>
+			<description>1 to start playback, 0 to stop it.</description>
+		</inlet>
+		<inlet id="1" type="float">
+			<digest>Playback speed</digest>
+			<description>Use 1. for normal playback speed, 2. to play twice as fast, 0.5 to play twice as slow.</description>
+		</inlet>
+		<inlet id="2" type="float">
+			<digest>Loop start (ms)</digest>
+			<description>Where the playback should start from.</description>
+		</inlet>
+		<inlet id="3" type="float">
+			<digest>Loop end (ms)</digest>
+			<description>Where the playback should stop (or jump back to the start, if looping is enabled).</description>
+		</inlet>
+		<inlet id="4" type="float">
+			<digest>Fade (ms)</digest>
+			<description>The time it takes for the playback to fade in at the start of the loop or to fade out at the end of the loop.</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="mc.signal">
+			<digest>The playback of the buffer as a multichannel signal.</digest>
+		</outlet>
+		<outlet id="1" type="signal">
+			<digest>The playhead position in milliseconds.</digest>
+		</outlet>
+		<outlet id="2" type="signal">
+			<digest>Loop sync: goes from 0 to 1 as the playback goes from start to end.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="set">
+			<arglist>
+				<arg name="buffer-name" optional="0" type="symbol" />
+			</arglist>
+			<digest>
+				Buffer to play back
+			</digest>
+			<description>
+				The name of the buffer containing the audio to play back.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="channels" optional="0" type="long">
+			<digest>Number of channels</digest>
+		</objarg>
+	</objarglist>
+
+    <!--ATTRIBUTES-->
+    <attributelist>
+​
+        <attribute name='loop' get='1' set='1' type='long' size='1' >
+            <digest>Enable looping</digest>
+            <description>If enabled, the playback won't stop at the end of the loop, instead it will start again from the loop start.</description>
+        </attribute>
+​
+        <attribute name='loopstart' get='1' set='1' type='float64' size='1' >
+			<digest>Loop start (ms)</digest>
+			<description>Where the playback should start from.</description>
+        </attribute>
+
+        <attribute name='loopend' get='1' set='1' type='float64' size='1' >
+			<digest>Loop end (ms)</digest>
+			<description>Where the playback should stop (or jump back to the start, if looping is enabled).</description>
+        </attribute>
+
+        <attribute name='fade' get='1' set='1' type='float64' size='1' >
+			<digest>Fade (ms)</digest>
+			<description>The time it takes for the playback to fade in at the start of the loop or to fade out at the end of the loop.</description>
+        </attribute>
+
+        <attribute name='speed' get='1' set='1' type='float64' size='1' >
+			<digest>Playback speed</digest>
+			<description>Use 1. for normal playback speed, 2. to play twice as fast, 0.5 to play twice as slow.</description>
+        </attribute>
+
+        <attribute name='buffer' get='1' set='1' type='symbol' size='1' >
+			<digest>Buffer to play back</digest>
+			<description>The name of the buffer containing the audio to play back.</description>
+        </attribute>
+​
+    </attributelist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="groove~"/>
+		<seealso name="play~"/>
+		<seealso name="buffer~"/>
+	</seealsolist>
+	
+</c74object>

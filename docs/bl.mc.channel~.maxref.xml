@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.mc.channel~">
+
+	<digest>
+		Extract channel at an index from an multichannel signal
+	</digest>
+	
+	<description>
+		Passes through only one channel at the defined index (1-based) from an incoming multichannel signal. 
+		You can define the chosen index dynamically by sending an integer to the left inlet.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">audio</metadata>
+		<metadata name="tag">mc</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long">
+			<digest>The channel to extract from the multichannel signal</digest>
+		</inlet>
+		<inlet id="1" type="mc.signal">
+			<digest>The multichannel signal to extract a channel from</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="signal">
+			<digest>The extracted signal</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="channel" optional="1" type="long">
+			<digest>The channel to extract.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				The channel to extract
+			</digest>
+			<description>
+				Left inlet: the (1-based) index of the channel to extract.
+			</description>
+		</method>
+		<method name="ramp">
+			<arglist>
+				<arg name="ramp-time" optional="0" type="long" />
+			</arglist>
+			<digest>
+				The ramp time in milliseconds when changing channel
+			</digest>
+			<description>
+				The ramp time in milliseconds when changing channel.
+			</description>
+		</method>
+		<method name="mc.signal">
+			<digest>
+				The multichannel signal to extract a channel from
+			</digest>
+			<description>
+				Right inlet: the multichannel signal to extract a channel from.
+			</description>
+		</method>
+	</methodlist>
+
+    <!--ATTRIBUTES-->
+    <attributelist>
+        <attribute name='ramp' get='1' set='1' type='long' size='1' >
+            <digest>The ramp time in milliseconds when changing channel</digest>
+            <description>Defines the time to fade between channels. The default is 10 ms.</description>
+        </attribute>
+    </attributelist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="mc.unpack~"/>
+		<seealso name="mc.separate~"/>
+		<seealso name="mc.channelcount~"/>
+	</seealsolist>
+	
+</c74object>

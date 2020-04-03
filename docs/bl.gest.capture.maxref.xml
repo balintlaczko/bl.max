@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.gest.capture">
+
+	<digest>
+		Capture anything as a gesture
+	</digest>
+	
+	<description>
+		Generic tool to sample any kind of data stream and output it as a coll, 
+		where the coll indices represent the elapsed time in milliseconds. 
+		This is done by a JS script, so the timing of the samples will not be as 
+		accurate as if it was a gen script, but for general purposes it is still pretty good. 
+		It can also come handy when we don't know the structure or type of the data beforehand, 
+		the object doesn't require that the number or type of the features remain the same 
+		throughout the recording ("anything goes").
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">gesture</metadata>
+		<metadata name="tag">capture</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/symbol">
+			<digest>1/0 or "dump"</digest>
+			<description>1/0 to start/stop recording, "dump" to output recorded gesture as a coll</description>
+		</inlet>
+		<inlet id="1" type="anything">
+			<digest>The data stream to capture</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>Time-code (in ms) and the recorded features</digest>
+		</outlet>
+		<outlet id="1" type="symbol">
+			<digest>Status messages: "started", "stopped", "dumped".</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				1 to start recording, 0 to stop recording.
+			</digest>
+			<description>
+				1 to start recording, 0 to stop recording.
+			</description>
+		</method>
+		<method name="dump">
+			<digest>
+				Output each step in the time series as a list of time-codes and features
+			</digest>
+			<description>
+				Output the recorded gesture as a list of time-codes and features. Works well with a coll.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.gest.record"/>
+		<seealso name="bl.gest.play"/>
+		<seealso name="mtr"/>
+	</seealsolist>
+	
+</c74object>

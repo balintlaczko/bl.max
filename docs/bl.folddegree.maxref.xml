@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.folddegree">
+
+	<digest>
+		Fold any degree into the range of -180° to 180°
+	</digest>
+	
+	<description>
+ 		Expresses any degree with the equivalent one in the range of -180° to 180°.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">trigonometry</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/float">
+			<digest>A number representing an euler angle</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>The same angle between -180° and 180°</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				A number representing an euler angle.
+			</digest>
+			<description>
+				An integer or float number representing an euler angle.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="%"/>
+	</seealsolist>
+	
+</c74object>

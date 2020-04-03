@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.indexof">
+
+	<digest>
+		Get the index of an element in a list
+	</digest>
+	
+	<description>
+		Returns the 0-based index of a given element in a list (if the element can be found).
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">list</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/float/symbol">
+			<digest>Element to find.</digest>
+		</inlet>
+		<inlet id="1" type="list">
+			<digest>The list to find elements in.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="index">
+			<digest>The 0-based index of the element in the list if the element is found.</digest>
+		</outlet>
+		<outlet id="1" type="success">
+			<digest>Returns 1 if the element has been found, 0 otherwise.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="long/float/symbol">
+			<digest>
+				The element to find.
+			</digest>
+			<description>
+				In left inlet: the element to find in the list.
+			</description>
+		</method>
+		<method name="list">
+			<digest>
+				The list to find elements in.
+			</digest>
+			<description>
+				In right inlet: the list in which we want to find elements.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.genlist"/>
+		<seealso name="bl.randlist"/>
+		<seealso name="bl.getrange"/>
+		<seealso name="zl"/>
+	</seealsolist>
+	
+</c74object>

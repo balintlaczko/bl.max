@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.snap.seq">
+
+	<digest>
+		Sequence snapshot interpolation
+	</digest>
+	
+	<description>
+		Provides an easy-to-use interface to sequence interpolation between 
+		snapshots made with bl.viewersnaps or bl.viewersnaps+. 
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">snapshot</metadata>
+		<metadata name="tag">interpolation</metadata>
+		<metadata name="tag">interpolate</metadata>
+		<metadata name="tag">sequence</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>Messages to bl.snap.seq</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>Interpolation messages</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="start">
+			<digest>
+				Start interpolation sequence from the beginning
+			</digest>
+		</method>
+
+		<method name="stop">
+			<digest>
+				Stop interpolation sequence
+			</digest>
+		</method>
+
+		<method name="loop">
+			<arglist>
+				<arg name="loop-enable" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Toggle looping
+			</digest>
+		</method>
+
+		<method name="from">
+			<arglist>
+				<arg name="snapshot" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set first snapshot in the sequence
+			</digest>
+		</method>
+
+		<method name="to">
+			<arglist>
+				<arg name="snapshot" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set last snapshot in the sequence
+			</digest>
+		</method>
+
+		<method name="laptime">
+			<arglist>
+				<arg name="time" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set default time (ms) to interpolate between snapshots
+			</digest>
+		</method>
+
+		<method name="lapmode">
+			<arglist>
+				<arg name="lapmode-enable" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Toggle lapmode
+			</digest>
+			<description>
+			If this is enabled a different laptime can be set for each step in the sequence 
+			(by editing the laptimes coll via its text editor window or filling it up via laptimeat messages)
+			</description>
+		</method>
+
+		<method name="laptimeat">
+			<arglist>
+				<arg name="snapshot" optional="0" type="long" />
+				<arg name="time" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set laptime at a snapshot
+			</digest>
+		</method>
+
+		<method name="easing">
+			<arglist>
+				<arg name="function" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set default easing funcion
+			</digest>
+		</method>
+
+		<method name="easingmode">
+			<arglist>
+				<arg name="easingmode-enable" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Toggle easingmode
+			</digest>
+			<description>
+			If this is enabled a different easing function can be set for each step in the sequence 
+			(by editing the easings coll via its text editor window or filling it up via easingat messages)
+			</description>
+		</method>
+
+		<method name="easingat">
+			<arglist>
+				<arg name="snapshot" optional="0" type="long" />
+				<arg name="function" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Set easing at a snapshot
+			</digest>
+		</method>
+
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.viewersnaps"/>
+		<seealso name="bl.viewersnaps+"/>
+		<seealso name="bl.dict.interpolate"/>
+	</seealsolist>
+	
+</c74object>

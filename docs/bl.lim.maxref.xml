@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.lim">
+
+	<digest>
+		Limit the rate of a data stream with gating
+	</digest>
+	
+	<description>
+		Similar to qlim or speedlim, with the difference that it drops 
+		(rather than postpones) every incoming message which arrives faster 
+		than the defined time interval (ms).
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="anything">
+			<digest>The data stream to rate-limit</digest>
+		</inlet>
+		<inlet id="1" type="long/float">
+			<digest>Set a new rate limit in milliseconds</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>The rate-limited data stream</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="rate-limit" optional="0" type="long/float">
+			<digest>The rate limit in milliseconds.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="anything">
+			<digest>
+				The data stream to rate-limit.
+			</digest>
+			<description>
+				Left inlet: the data stream to rate-limit.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="speedlim"/>
+		<seealso name="qlim"/>
+	</seealsolist>
+	
+</c74object>

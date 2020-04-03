@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.p">
+
+	<digest>
+		Generate subpatchers quickly
+	</digest>
+	
+	<description>
+		Generates a subpatcher from a single line of code. In this subpatcher 
+		all subsequent [objects] and (messages) are connected in a chain.
+		For details about the syntax, visit the help patcher!
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">p</metadata>
+		<metadata name="tag">patcher</metadata>
+		<metadata name="tag">subpatcher</metadata>
+		<metadata name="tag">patching</metadata>
+	</metadatalist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="objects" optional="0" type="list">
+			<digest>The objects and messages in the subpatcher</digest>
+			<description>
+			For details about the syntax, visit the help patcher!
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.patcher"/>
+		<seealso name="patcher"/>
+		<seealso name="thispatcher"/>
+	</seealsolist>
+	
+</c74object>

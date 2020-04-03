@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.mc.snapshot~">
+
+	<digest>
+		Take snapshot of an mc signal and output it as a list
+	</digest>
+	
+	<description>
+		Similar to snapshot~ or mc.snapshot~, but it outputs the values as a list.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">audio</metadata>
+		<metadata name="tag">mc</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="mc.signal">
+			<digest>The multichannel signal to snapshot</digest>
+		</inlet>
+		<inlet id="1" type="long/float">
+			<digest>The rate of snapshotting in milliseconds. Default is 250 ms.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>The snapshot of the multichannel signal as a list</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="rate" optional="1" type="long/float">
+			<digest>The rate of snapshotting in milliseconds.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="snapshot~"/>
+		<seealso name="mc.snapshot~"/>
+	</seealsolist>
+	
+</c74object>

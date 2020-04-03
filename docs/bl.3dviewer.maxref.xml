@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.3dviewer">
+
+	<digest>
+		3-dimensional viewer for spat5.viewer or spat5.oper
+	</digest>
+	
+	<description>
+		Interprets messages from a connected spat5.viewer or spat5.oper object and 
+		visualizes the sources and speakers in a 3D scene.
+		<br/>
+		Usage:
+		<br/>
+		1) Connect the left-most and the dump outlet of your oper or viewer to bl.3dviewer.
+		<br/>
+		2) /dump the oper or viewer so the 3dviewer fetches the positions and colors of your 
+		speakers and sources. Later on, if you change the number, color, label or visibility of 
+		a speaker or a source, you have to /dump again, since the oper/viewer doesn't output these 
+		values automatically when changed. 
+		<br/>
+		Speaker#1 is always red.
+		<br/>
+		3) Switch on "render" on the bl.3dviewer UI.
+		<br/>
+		4) Drag the handle in the middle to rotate the image; clicking on "reset" or double-clicking 
+		anywhere (but the handle in the middle) on the spat3D window also resets the view to default 
+		position/orientation. Alt/Option + drag zooms, Cmd/Ctrl + drag repositions the image.
+		<br/>
+		5) Use WSAD keys to move around, and Q/Z to ascend/descend.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">spat5</metadata>
+		<metadata name="tag">3D</metadata>
+		<metadata name="tag">viewer</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>OSC messages from a spat5.viewer or a spat5.oper</digest>
+		</inlet>
+	</inletlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="jit.world"/>
+		<seealso name="bl.autobp"/>
+		<seealso name="spat5.viewer"/>
+		<seealso name="spat5.oper"/>
+	</seealsolist>
+	
+</c74object>

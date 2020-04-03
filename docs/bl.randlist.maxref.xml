@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.randlist">
+
+	<digest>
+		Generate a sorted list of random floats in a range
+	</digest>
+	
+	<description>
+		Generates a list of float numbers of an arbitrary size with the first argument 
+		being the size of the list, the second being the bottom of the range and the third being the top.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">list</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang">
+			<digest>Bang: output the generated list.</digest>
+		</inlet>
+		<inlet id="1" type="float/long">
+			<digest>The minimum of the range.</digest>
+		</inlet>
+		<inlet id="2" type="float/long">
+			<digest>The maximum of the range.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>List: the generated list.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="list-size" optional="0" type="long">
+			<digest>The size of the list.</digest>
+		</objarg>
+		<objarg name="range-min" optional="0" type="long/float">
+			<digest>The minimum of the range.</digest>
+		</objarg>
+		<objarg name="range-max" optional="0" type="long/float">
+			<digest>The maximum of the range.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Bang to output the generated list.
+			</digest>
+			<description>
+				Bang the left inlet to output a new sorted list of random floats within the specified range.
+			</description>
+		</method>
+		<method name="float">
+			<digest>
+				Set the minimum or maximum of the range.
+			</digest>
+			<description>
+				In the second inlet: sets the minimum of the range.
+				<br/>
+				In the third inlet: sets the maximum of the range.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.genlist"/>
+		<seealso name="bl.indexof"/>
+		<seealso name="bl.getrange"/>
+		<seealso name="zl"/>
+		<seealso name="jit.noise"/>
+		<seealso name="scale"/>
+	</seealsolist>
+	
+</c74object>

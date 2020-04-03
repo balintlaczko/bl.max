@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.autobp">
+
+	<digest>
+		Convert abstractions into bpatchers
+	</digest>
+	
+	<description>
+		Automatically creates a bpatcher with a specified width and height 
+        from an abstraction. To use it, simply drop it somewhere in the abstraction 
+        you want to use as a bpatcher. In case there are arguments defined for the 
+        abstraction bl.autobp fetches these and passes them through its outlet in 
+        the created bpatcher (like a patcherargs object).
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">autobp</metadata>
+		<metadata name="tag">bpatcher</metadata>
+		<metadata name="tag">patching</metadata>
+	</metadatalist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="width" optional="0" type="long">
+			<digest>The width of the bpatcher</digest>
+		</objarg>
+		<objarg name="height" optional="0" type="long">
+			<digest>The height of the bpatcher</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bpatcher"/>
+		<seealso name="bl.patcher"/>
+		<seealso name="thispatcher"/>
+	</seealsolist>
+	
+</c74object>

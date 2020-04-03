@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.gest.play~">
+
+	<digest>
+		Play back gestures from a polybuffer~ recorded by bl.gest.record~
+	</digest>
+	
+	<description>
+		Tool for playing back previously recorded gestures. After you switch on the device, 
+		you can lauch clips from the polybuffer~. The rate (default: 10 ms) will define the speed of the playback. 
+		If you play a sequence which was sampled at a 10 ms rate at the time of recording, choosing 10 ms rate results 
+		in speed=1 playback, 20 ms will be half-speed.
+		<br/>
+		You can use the donebang to for example launch another random clip from the polybuffer, perhaps with a different rate.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">gesture</metadata>
+		<metadata name="tag">capture</metadata>
+		<metadata name="tag">play</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/list">
+			<digest>Messages to interact with the device</digest>
+			<description>
+			1 to switch on device, 0 to switch it off.
+			<br/>
+			rate: The rate the incoming data stream is sampled once the recording has started.
+			Default is 10 ms.
+			<br/>
+			stop: stop playback.
+			</description>
+		</inlet>
+		<inlet id="1" type="long">
+			<digest>The index of the recorded gesture.</digest>
+			<description>
+			The (1-based) index of the recorded gesture in the polybuffer~ to be played back.
+			</description>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float/list">
+			<digest>The stream of recorded features.</digest>
+		</outlet>
+		<outlet id="1" type="long">
+			<digest>The index of the currently output datapoint.</digest>
+		</outlet>
+		<outlet id="2" type="bang">
+			<digest>"Donebang" - bang when sequence reached the end.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="number">
+			<digest>
+				1 to switch on device, 0 to switch it off.
+			</digest>
+			<description>
+				1 to switch on device, 0 to switch it off.
+			</description>
+		</method>
+
+		<method name="rate">
+			<arglist>
+				<arg name="sampling-rate" optional="0" type="long" />
+			</arglist>
+			<digest>
+				Sample incoming data at every N milliseconds.
+			</digest>
+			<description>
+				The rate the incoming data stream is sampled once the recording has started.
+				Default is 10 ms.
+			</description>
+		</method>
+
+		<method name="stop">
+			<digest>
+				Stop current playback.
+			</digest>
+			<description>
+				Stop current playback.
+			</description>
+		</method>
+	</methodlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The name of the polybuffer~ where the recorded gestures inare stored.</digest>
+		</objarg>
+		<objarg name="features" optional="0" type="long">
+			<digest>The number of features recorded at each data point. (The number of channels the buffer has.)</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.gest.record~"/>
+		<seealso name="bl.gest.capture"/>
+		<seealso name="polybuffer~"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.genlist">
+
+	<digest>
+		Generate a list as a range of integers
+	</digest>
+	
+	<description>
+		Generates a list of integer numbers with the first argument being the bottom of the range and the second being the top. 
+		Both numbers are included in the list.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">list</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang">
+			<digest>Bang: output the generated list.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>List: the generated list between the two numbers.</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="range-start" optional="0" type="long">
+			<digest>The start of the range. Will be the first number on the list.</digest>
+		</objarg>
+		<objarg name="range-end" optional="0" type="long">
+			<digest>The end of the range. Will be the last number on the list.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Bang to output the generated list.
+			</digest>
+			<description>
+				Bang to output the generated list. The numbers provided as arguments will be included as the first and last elements in the list.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.randlist"/>
+		<seealso name="bl.indexof"/>
+		<seealso name="bl.getrange"/>
+		<seealso name="zl"/>
+		<seealso name="uzi"/>
+		<seealso name="scale"/>
+	</seealsolist>
+	
+</c74object>

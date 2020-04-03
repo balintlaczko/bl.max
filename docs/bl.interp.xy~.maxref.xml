@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.interp.xy~">
+
+	<digest>
+		Generate interpolating XY coordinates
+	</digest>
+	
+	<description>
+		Generates individually interpolating XY coordinates for an arbitrary number of instances (points). 
+		The interpolation time is randomly chosen for each point (at each new interpolation) between the 
+		minimum and maximum interpolation time.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">interpolate</metadata>
+		<metadata name="tag">interpolation</metadata>
+		<metadata name="tag">XY</metadata>
+		<metadata name="tag">coordinate</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/list">
+			<digest>Enable device, set rate and scale</digest>
+		</inlet>
+		<inlet id="1" type="long/float/signal">
+			<digest>Minimum interpolation time (ms)</digest>
+		</inlet>
+		<inlet id="2" type="long/float/signal">
+			<digest>Maximum interpolation time (ms)</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>XY coordinates for each point as a list</digest>
+		</outlet>
+		<outlet id="1" type="list">
+			<digest>XY coordinates for each point as a multichannel signal</digest>
+		</outlet>
+		<outlet id="2" type="list">
+			<digest>Current interpolation time for each point as a list</digest>
+		</outlet>
+		<outlet id="3" type="list">
+			<digest>Current interpolation time for each point as a multichannel signal</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="int">
+			<digest>
+				Enable device
+			</digest>
+		</method>
+		<method name="rate">
+			<arglist>
+				<arg name="list-output-rate" optional="0" type="long/float" />
+			</arglist>
+			<digest>
+				The rate of the list outputs. Default is 100 ms.
+			</digest>
+		</method>
+		<method name="scale">
+			<arglist>
+				<arg name="scale-area-factor" optional="0" type="long/float" />
+			</arglist>
+			<digest>
+				The scale of the area in which all points move. Default is 1.
+			</digest>
+			<description>
+				If scale=1, all coordinates will interpolate between (-1, -1) and (1, 1).
+				If scale=2, all coordinates will interpolate between (-2, -2) and (2, 2).
+			</description>
+		</method>
+	</methodlist>
+
+		<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="points" optional="0" type="long">
+			<digest>Number of points</digest>
+			<description>Number of individually interpolating points.</description>
+		</objarg>
+	</objarglist>
+
+    <!--ATTRIBUTES-->
+​
+    <attributelist>
+​
+        <attribute name='enable' get='1' set='1' type='long' size='1' >
+            <digest>Enable device</digest>
+        </attribute>
+
+        <attribute name='scale' get='1' set='1' type='long/float' size='1' >
+			<digest>
+				The scale of the area in which all points move. Default is 1.
+			</digest>
+			<description>
+				If scale=1, all coordinates will interpolate between (-1, -1) and (1, 1).
+				If scale=2, all coordinates will interpolate between (-2, -2) and (2, 2).
+			</description>
+        </attribute>
+
+        <attribute name='rate' get='1' set='1' type='long/float' size='1' >
+			<digest>
+				The rate of the list outputs. Default is 100 ms.
+			</digest>
+        </attribute>
+
+        <attribute name='time_min' get='1' set='1' type='long/float' size='1' >
+			<digest>
+				Minimum interpolation time (ms)
+			</digest>
+        </attribute>
+
+        <attribute name='time_max' get='1' set='1' type='long/float' size='1' >
+			<digest>
+				Maximum interpolation time (ms)
+			</digest>
+        </attribute>
+​
+    </attributelist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.dict.interpolate"/>
+		<seealso name="bl.viewersnaps"/>
+		<seealso name="bl.viewersnaps+"/>
+		<seealso name="bl.snap.seq"/>
+		<seealso name="bl.mc.snapshot~"/>
+	</seealsolist>
+	
+</c74object>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.slider">
+
+	<digest>
+		Adaptive slider with value display
+	</digest>
+	
+	<description>
+		Without given arguments bl.slider defaults to a 0-1 range. This range will extend if necessary 
+		to adapt to either an incoming number range or values set with the embedded numberbox. Dragging 
+		the embedded slider itself won't change the value range.
+		<br/>
+		Passing only one argument sets the lower range limit of bl.slider, but it will still adapt the 
+		higher end of the range to incoming numbers (or ones set in the embedded numberbox).
+		<br/>
+		Passing two arguments sets the range limits of bl.slider in both ends, and bl.slider won't adapt 
+		to the range of incoming numbers.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">UI</metadata>
+		<metadata name="tag">slider</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang/long/float/symbol">
+			<digest>Set bl.slider to a new number and cause output</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>Number from bl.slider</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="range-start" optional="1" type="long/float">
+			<digest>The lower limit of the range.</digest>
+		</objarg>
+		<objarg name="range-end" optional="1" type="long/float">
+			<digest>The higher limit of the range.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Output current bl.slider value.
+			</digest>
+			<description>
+				Output current bl.slider value.
+			</description>
+		</method>
+		<method name="reset">
+			<digest>
+				Resets the running range of bl.slider.
+			</digest>
+			<description>
+				Resets the running range of bl.slider.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.getrange"/>
+		<seealso name="bl.autobp"/>
+		<seealso name="slider"/>
+		<seealso name="peak"/>
+		<seealso name="trough"/>
+	</seealsolist>
+	
+</c74object>

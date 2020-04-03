@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.p.bind">
+
+	<digest>
+		Bind the output of several patterns into a dictionary
+	</digest>
+	
+	<description>
+		Fetches the values of all connected patterns (bl.p.objects) and outputs a 
+		dictionary with the current value of each pattern. It can also act as a 
+		clock causing the output of connected patterns.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">p</metadata>
+		<metadata name="tag">pattern</metadata>
+		<metadata name="tag">bind</metadata>
+		<metadata name="tag">dictionary</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long">
+			<digest>Toggle the internal metro.</digest>
+		</inlet>
+		<inlet id="1" type="long/float">
+			<digest>Internal metro rate.</digest>
+		</inlet>
+		<inlet id="2" type="bang">
+			<digest>Bang for a one-time output.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="bang/list">
+			<digest>Bind to and advance connected patterns</digest>
+			<description>Advances connected patterns and fetches their value.</description>
+		</outlet>
+		<outlet id="1" type="list">
+			<digest>Only bind to connected patterns</digest>
+			<description>Fetching the value of connected patterns without advancing them.</description>
+		</outlet>
+		<outlet id="2" type="dictionary">
+			<digest>Dictionary with the fetched values</digest>
+			<description>After each value has been retrieved, a dictionary with the same name as the current bl.p.bind instance is output.</description>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The name of this bl.p.bind instance.</digest>
+			<description>This will be the name of the output dictionary as well.</description>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.p.rand"/>
+		<seealso name="bl.p.drunk"/>
+		<seealso name="bl.p.urn"/>
+		<seealso name="bl.p.seq"/>
+		<seealso name="bl.p.white"/>
+		<seealso name="dict"/>
+		<seealso name="metro"/>
+	</seealsolist>
+	
+</c74object>

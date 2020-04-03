@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.decode32">
+
+	<digest>
+		Connect a 3D ambisonics encoder to a 2D decoder
+	</digest>
+	
+	<description>
+		Automatically connects the horizontal spherical harmonics of a selected 3D ambisonics 
+		encoder to a 2D decoder. Works in an unlocked patcher.
+		<br/>
+		Usage:
+		<br/>
+		1) Select the 3D encoder and the 2D decoder you want to connect.
+		<br/>
+		2) Cmd/Ctrl + click on the button connected to bl.decode32 
+		(while you are still in editing mode and the 2 objects remain selected).
+		<br/>
+		3) Alternatively Cmd/Ctrl + click on a number (representing the HOA order) while the 
+		encoder and the decoder remain selected.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">ambisonics</metadata>
+		<metadata name="tag">decode32</metadata>
+		<metadata name="tag">decode</metadata>
+		<metadata name="tag">dimensions</metadata>
+		<metadata name="tag">patching</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang/long">
+			<digest>Bang/int: connect the selected encoder and decoder.</digest>
+			<description>
+			Bang/int: connect the selected encoder and decoder upto the ambisonics 
+			order specified with the first argument or with the integer sent to the abstraction.
+			</description>
+		</inlet>
+	</inletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="order" optional="1" type="long">
+			<digest>Default ambisonics order.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Connect selected objects
+			</digest>
+			<description>
+				Connect the selected encoder and decoder upto the ambisonics order specified 
+				with the first argument.
+			</description>
+		</method>
+		<method name="int">
+			<digest>
+				Connect selected objects upto order
+			</digest>
+			<description>
+				Connect the selected encoder and decoder upto the ambisonics order specified 
+				with the ingeter number sent to the abstraction.
+			</description>
+		</method>
+	</methodlist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="spat5.multi.connect"/>
+		<seealso name="spat5.hoa.reduce~"/>
+		<seealso name="spat5.hoa.encoder~"/>
+		<seealso name="spat5.hoa.decoder~"/>
+	</seealsolist>
+	
+</c74object>

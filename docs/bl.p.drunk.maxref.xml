@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.p.drunk">
+
+	<digest>
+		Step in a drunken walk in a pattern sequence
+	</digest>
+	
+	<description>
+		Generates an event stream where each consecutive output is a randomly chosen element 
+		(from the sequence defined as a list of arguments) within the distance from the last 
+		element defined by drunk step size. Similar to bl.p.rand.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">p</metadata>
+		<metadata name="tag">pattern</metadata>
+		<metadata name="tag">random</metadata>
+		<metadata name="tag">drunk</metadata>
+		<metadata name="tag">walk</metadata>
+		<metadata name="tag">sequence</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang">
+			<digest>The next element in the drunken walk.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="anything">
+			<digest>Element value</digest>
+		</outlet>
+		<outlet id="1" type="long/list">
+			<digest>Element index</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="drunk-step" optional="0" type="long">
+			<digest>The drunk step size</digest>
+		</objarg>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The name of this bl.p.drunk instance.</digest>
+		</objarg>
+		<objarg name="sequence" optional="1" type="list">
+			<digest>The sequence.</digest>
+			<description>
+			For nested elements type the bl.p.object in square brackets, like:
+			[bl.p.drunk nested 1 2 3] //// For optional skipping
+			enclose the element in parentheses, like: 1 (2) 3 -- where "2" can be skipped. 
+			//// For subsequences enclose several elements in double parentheses, 
+			like: 1 ((2 3 4)) 5 -- where "2 3 4" is a subsequence.
+			</description>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.p.seq"/>
+		<seealso name="bl.p.urn"/>
+		<seealso name="bl.p.rand"/>
+		<seealso name="bl.p.white"/>
+		<seealso name="bl.p.bind"/>
+		<seealso name="drunk"/>
+	</seealsolist>
+	
+</c74object>

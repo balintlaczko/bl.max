@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.uhjdecoder~">
+
+	<digest>
+		Decode HOA to UHJ with Spat5
+	</digest>
+	
+	<description>
+		Decodes a 3-dimensional Higher Order Ambisonics stream into UHJ Stereo. 
+		It uses spat5.hoa.reduce~ in compensation mode to get 1st order ambisonics, 
+		which gets converted into B-format (FuMa), which in turn gets decoded into UHJ.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">spat5</metadata>
+		<metadata name="tag">hoa</metadata>
+		<metadata name="tag">uhj</metadata>
+		<metadata name="tag">bformat</metadata>
+		<metadata name="tag">stereo</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="mc.signal">
+			<digest>The HOA stream as a multichannel signal</digest>
+		</inlet>
+	</inletlist>
+	
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="mc.signal">
+			<digest>Decoded stereo as a multichannel signal</digest>
+		</outlet>
+	</outletlist>
+
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="HOA-order" optional="0" type="long">
+			<digest>Ambisonics order</digest>
+		</objarg>
+	</objarglist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="spat5.hoa.reduce~"/>
+		<seealso name="spat5.hoa.sorting~"/>
+		<seealso name="spat5.decoder~"/>
+	</seealsolist>
+	
+</c74object>

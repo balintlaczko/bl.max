@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.yawfix">
+
+	<digest>
+		Fixate the yaw of a virtual source in spat5
+	</digest>
+	
+	<description>
+		Continuously compensates the shift in a source's yaw as it changes position in order to fixate 
+		the yaw to a certain direction.
+		<br/>
+		Usage:
+		<br/>
+		1) Routepass the source's location (from your viewer or oper) to the 2nd inlet.
+		<br/>
+		2) (optional) For 'lookat' mode, routepass a source or speaker position. (You can also fake it 
+		with any point by prepending a "/source/[index]" or a "/speaker/[index]") This will be used as 
+		a reference point.
+		<br/>
+		3) For 'fixed' mode provide a yaw angle at the 1st inlet, and use the 1st outlet as yaw value 
+		for the source fed to the viewer or the oper. This will be the relative-to-source direction the 
+		source will always look at.
+		<br/>
+		4) For 'lookat' mode provide a reference point and use the 2nd outlet as yaw value for the source 
+		fed to the viewer or the oper. In this case, the source will always look at the reference point.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">spat5</metadata>
+		<metadata name="tag">yawfix</metadata>
+		<metadata name="tag">fixate</metadata>
+		<metadata name="tag">yaw</metadata>
+		<metadata name="tag">source</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="long/float">
+			<digest>The fixed yaw angle</digest>
+			<description>The azimuth angle where the yaw should be fixated for outlet 1.</description>
+		</inlet>
+		<inlet id="1" type="list">
+			<digest>Source position</digest>
+			<description>
+			The position of the source whose yaw we want to fixate, 
+			like "/source/1/aed 1 2 3".
+			</description>
+		</inlet>
+		<inlet id="2" type="list">
+			<digest>Reference position</digest>
+			<description>
+			The position of the reference point, like "/speaker/1/aed 1 2 3". This will affect 
+			the compensated yaw output on outlet 2.
+			</description>
+		</inlet>
+	</inletlist>
+	
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>Compensated yaw angle for corresponding azimuth given at inlet 1.</digest>
+		</outlet>
+		<outlet id="1" type="float">
+			<digest>Compensated yaw angle so the source "looks at" the reference point.</digest>
+		</outlet>
+	</outletlist>
+
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="spat5.viewer"/>
+		<seealso name="spat5.osc.routepass"/>
+		<seealso name="spat5.decoder~"/>
+	</seealsolist>
+	
+</c74object>

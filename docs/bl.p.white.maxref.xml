@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.p.white">
+
+	<digest>
+		Random numbers in a range as a pattern
+	</digest>
+	
+	<description>
+		Generates an event stream where each consecutive output is a randomly 
+		chosen float number in the range defined by the 2nd and 3rd arguments. 
+		Inspired by PWhite in SuperCollider.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">p</metadata>
+		<metadata name="tag">pattern</metadata>
+		<metadata name="tag">random</metadata>
+		<metadata name="tag">range</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="bang">
+			<digest>Get a new random float from the range.</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="float">
+			<digest>Random float from the range</digest>
+		</outlet>
+		<outlet id="1" type="float">
+			<digest>The same random float in the normalized range</digest>
+		</outlet>
+	</outletlist>
+	
+	<!--ARGUMENTS-->
+	<objarglist>
+		<objarg name="name" optional="0" type="symbol">
+			<digest>The name of this bl.p.white instance.</digest>
+		</objarg>
+		<objarg name="range-start" optional="0" type="float">
+			<digest>The lower limit of the range.</digest>
+		</objarg>
+		<objarg name="range-end" optional="0" type="float">
+			<digest>The higher limit of the range.</digest>
+		</objarg>
+	</objarglist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="bl.p.rand"/>
+		<seealso name="bl.p.drunk"/>
+		<seealso name="bl.p.urn"/>
+		<seealso name="bl.p.seq"/>
+		<seealso name="bl.p.bind"/>
+	</seealsolist>
+	
+</c74object>
