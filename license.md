@@ -1,6 +1,6 @@
 # The MIT License (MIT)
 
-Copyright © 2015 [Balint Laczko](https://github.com/balintlaczko)
+Copyright © 2020 [Balint Laczko](https://github.com/balintlaczko)
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
