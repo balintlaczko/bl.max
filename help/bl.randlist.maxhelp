@@ -132,7 +132,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 124.0, 214.0, 101.0, 22.0 ],
-					"text" : "bl.randlist 10 3 -4"
+					"text" : "bl.randlist 10 -4 3"
 				}
 
 			}
@@ -140,11 +140,13 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-6",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 315.0, 372.0, 22.0 ]
+					"patching_rect" : [ 10.0, 315.0, 372.0, 36.0 ],
+					"text" : "-3.316935 -3.285236 -2.034882 -1.977653 -1.663994 0.851809 1.957561 2.736529 2.786029 2.819318"
 				}
 
 			}
