@@ -13,44 +13,43 @@ bl.snap.seq needs the Ease packace, you can download it from the Package Manager
 Happy patching!
 
 ## Table of contents
-- [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer)
-- [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp)
-- [bl.decode32](https://github.com/balintlaczko/bl.max/tree/master#bldecode32)
-- [bl.dict.interpolate](https://github.com/balintlaczko/bl.max/tree/master#bldictinterpolate)
-- [bl.dict.isempty](https://github.com/balintlaczko/bl.max/tree/master#bldictisempty)
-- [bl.directivity.shaper~](https://github.com/balintlaczko/bl.max/tree/master#bldirectivityshaper)
-- [bl.extract~](https://github.com/balintlaczko/bl.max/tree/master#blextract)
-- [bl.folddegree](https://github.com/balintlaczko/bl.max/tree/master#blfolddegree)
-- [bl.genlist](https://github.com/balintlaczko/bl.max/tree/master#blgenlist)
-- [bl.gest.capture](https://github.com/balintlaczko/bl.max/tree/master#blgestcapture)
-- [bl.gest.play~](https://github.com/balintlaczko/bl.max/tree/master#blgestplay)
-- [bl.gest.record~](https://github.com/balintlaczko/bl.max/tree/master#blgestrecord)
-- [bl.getrange](https://github.com/balintlaczko/bl.max/tree/master#blgetrange)
-- [bl.indexof](https://github.com/balintlaczko/bl.max/tree/master#blindexof)
-- [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp)
-- [bl.interp.xy~](https://github.com/balintlaczko/bl.max/tree/master#blinterpxy)
-- [bl.keylatch](https://github.com/balintlaczko/bl.max/tree/master#blkeylatch)
-- [bl.lim](https://github.com/balintlaczko/bl.max/tree/master#bllim)
-- [bl.looper~](https://github.com/balintlaczko/bl.max/tree/master#bllooper)
-- [bl.mc.channel~](https://github.com/balintlaczko/bl.max/tree/master#blmcchannel)
-- [bl.mc.snapshot~](https://github.com/balintlaczko/bl.max/tree/master#blmcsnapshot)
-- [bl.p.bind](https://github.com/balintlaczko/bl.max/tree/master#blpbind)
-- [bl.p.drunk](https://github.com/balintlaczko/bl.max/tree/master#blpdrunk)
-- [bl.p.rand](https://github.com/balintlaczko/bl.max/tree/master#blprand)
-- [bl.p.seq](https://github.com/balintlaczko/bl.max/tree/master#blpseq)
-- [bl.p.urn](https://github.com/balintlaczko/bl.max/tree/master#blpurn)
-- [bl.p.white](https://github.com/balintlaczko/bl.max/tree/master#blpwhite)
-- [bl.patcher](https://github.com/balintlaczko/bl.max/tree/master#blpatcher)
-- [bl.randlist](https://github.com/balintlaczko/bl.max/tree/master#blrandlist)
-- [bl.slider](https://github.com/balintlaczko/bl.max/tree/master#blslider)
-- [bl.snap.seq](https://github.com/balintlaczko/bl.max/tree/master#blsnapseq)
-- [bl.sourceline](https://github.com/balintlaczko/bl.max/tree/master#blsourceline)
-- [bl.splitext](https://github.com/balintlaczko/bl.max/tree/master#blsplitext)
-- [bl.split~](https://github.com/balintlaczko/bl.max/tree/master#blsplit)
-- [bl.uhjdecoder~](https://github.com/balintlaczko/bl.max/tree/master#bluhjdecoder)
-- [bl.viewersnaps](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps)
-- [bl.viewersnaps+](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps-1)
-- [bl.yawfix](https://github.com/balintlaczko/bl.max/tree/master#blyawfix)
+- [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer) | 3-dimensional viewer for spat5.viewer or spat5.oper
+- [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp) | Convert abstractions into bpatchers
+- [bl.decode32](https://github.com/balintlaczko/bl.max/tree/master#bldecode32) | Connect a 3D ambisonics encoder to a 2D decoder
+- [bl.dict.interpolate](https://github.com/balintlaczko/bl.max/tree/master#bldictinterpolate) | Interpolate between two dictionaries
+- [bl.dict.isempty](https://github.com/balintlaczko/bl.max/tree/master#bldictisempty) | Check if a dictionary is empty
+- [bl.directivity.shaper~](https://github.com/balintlaczko/bl.max/tree/master#bldirectivityshaper) | Spatialize an audio spectrum
+- [bl.extract~](https://github.com/balintlaczko/bl.max/tree/master#blextract) | Extract part of a frequency range
+- [bl.folddegree](https://github.com/balintlaczko/bl.max/tree/master#blfolddegree) | Fold any degree into the range of -180° to 180°
+- [bl.genlist](https://github.com/balintlaczko/bl.max/tree/master#blgenlist) | Generate a list as a range of integers
+- [bl.gest.capture](https://github.com/balintlaczko/bl.max/tree/master#blgestcapture) | Capture anything as a gesture
+- [bl.gest.play~](https://github.com/balintlaczko/bl.max/tree/master#blgestplay) Play back gestures from a polybuffer~ recorded by bl.gest.record~
+- [bl.gest.record~](https://github.com/balintlaczko/bl.max/tree/master#blgestrecord) | Record gestures into a polybuffer~
+- [bl.getrange](https://github.com/balintlaczko/bl.max/tree/master#blgetrange) | Get the range of a number stream
+- [bl.indexof](https://github.com/balintlaczko/bl.max/tree/master#blindexof) | Get the index of an element in a list
+- [bl.interp.xy~](https://github.com/balintlaczko/bl.max/tree/master#blinterpxy) | Generate interpolating XY coordinates
+- [bl.keylatch](https://github.com/balintlaczko/bl.max/tree/master#blkeylatch) | Toggle with pressing and releasing a key
+- [bl.lim](https://github.com/balintlaczko/bl.max/tree/master#bllim) | Limit the rate of a data stream with gating
+- [bl.looper~](https://github.com/balintlaczko/bl.max/tree/master#bllooper) | Generic click-free buffer playback tool  
+- [bl.mc.channel~](https://github.com/balintlaczko/bl.max/tree/master#blmcchannel) | Extract channel at an index from an mc signal
+- [bl.mc.snapshot~](https://github.com/balintlaczko/bl.max/tree/master#blmcsnapshot) | Take snapshot of an mc signal and output it as a list
+- [bl.p.bind](https://github.com/balintlaczko/bl.max/tree/master#blpbind) | Bind the output of several patterns into a dictionary
+- [bl.p.drunk](https://github.com/balintlaczko/bl.max/tree/master#blpdrunk) | Step in a drunken walk in a pattern sequence
+- [bl.p.rand](https://github.com/balintlaczko/bl.max/tree/master#blprand) | Step randomly in a pattern sequence
+- [bl.p.seq](https://github.com/balintlaczko/bl.max/tree/master#blpseq) | Step through a pattern sequence
+- [bl.p.urn](https://github.com/balintlaczko/bl.max/tree/master#blpurn) | Step through a pattern sequence in random order
+- [bl.p.white](https://github.com/balintlaczko/bl.max/tree/master#blpwhite) | Random numbers in a range as a pattern
+- [bl.patcher](https://github.com/balintlaczko/bl.max/tree/master#blpatcher) | Generate subpatchers quickly
+- [bl.randlist](https://github.com/balintlaczko/bl.max/tree/master#blrandlist) | Generate a sorted list of random floats in a range
+- [bl.slider](https://github.com/balintlaczko/bl.max/tree/master#blslider) | Adaptive slider with value display
+- [bl.snap.seq](https://github.com/balintlaczko/bl.max/tree/master#blsnapseq) | Sequence snapshot interpolation
+- [bl.sourceline](https://github.com/balintlaczko/bl.max/tree/master#blsourceline) | Align sources on a line
+- [bl.splitext](https://github.com/balintlaczko/bl.max/tree/master#blsplitext) | Separate paths from filenames and extensions
+- [bl.split~](https://github.com/balintlaczko/bl.max/tree/master#blsplit) | Split an audio stream into frequency bands
+- [bl.uhjdecoder~](https://github.com/balintlaczko/bl.max/tree/master#bluhjdecoder) | Decode HOA to UHJ with Spat5
+- [bl.viewersnaps](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps) | Snapshots for spat5.viewer or spat5.oper
+- [bl.viewersnaps+](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps-1) | Snapshots for spat5.viewer or spat5.oper with gen
+- [bl.yawfix](https://github.com/balintlaczko/bl.max/tree/master#blyawfix) | Fixate the yaw of a virtual source in spat5
 
 
 ### bl.3dviewer
