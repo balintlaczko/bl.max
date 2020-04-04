@@ -65,6 +65,8 @@ Speaker#1 is always red.
 4) Drag the handle in the middle to rotate the image; clicking on "reset" or double-clicking anywhere (but the handle in the middle) on the spat3D window also resets the view to default position/orientation. Alt/Option + click&drag zooms, Cmd/Ctrl + click&drag repositions the image.
 5) Use WSAD keys to move around, and Q & Z to ascend/descend.
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.3dviewer.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
@@ -86,12 +88,16 @@ Usage:
 2) Cmd/Ctrl + click on the button connected to bl.decode32 (while you are still in editing mode and the 2 objects remain selected).
 3) Alternatively Cmd/Ctrl + click on a number (representing the HOA order) while the encoder and the decoder remain selected.
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.decode32.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.dict.interpolate
 #### Interpolate between two dictionaries
 Given two dictionaries which have identical keynames with the same type of value data, the object interpolates between the stored values based on the ratio, given as a float ranging from 0 to 1, where 0 represents the dictionary in the left input, and 1 represents the dictionary in the right input.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.dict.interpolate.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -136,6 +142,8 @@ Generates a list of integer numbers with the first argument being the bottom of 
 #### Capture anything as a gesture
 This is a generic tool to sample any kind of data stream and output it as a coll, where the coll indices represent the elapsed time in milliseconds. This is done by a JS script, so the timing of the samples will not be as accurate as if it was a gen script, but for general purposes it is still pretty good. It can also come handy when we don't know the structure or type of the data beforehand, the object doesn't require that the number or type of the features remain the same throughout the recording ("anything goes").
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.gest.capture.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
@@ -174,6 +182,8 @@ Returns the 0-based index of a given element in a list (if the element can be fo
 ### bl.interp.xy~
 #### Generate interpolating XY coordinates
 Generates individually interpolating XY coordinates for an arbitrary number of instances (points). The interpolation time is randomly chosen for each point (at each new interpolation) between the minimum and maximum interpolation time.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.interp.xy~.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -218,6 +228,8 @@ Similar to snapshot~ or mc.snapshot~, but it outputs the values as a list.
 ### bl.p.bind
 #### Bind the output of several patterns into a dictionary
 Fetches the values of all connected patterns (bl.p.objects) and outputs a dictionary with the current value of each pattern. It can also act as a clock causing the output of connected patterns.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.p.bind.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -302,6 +314,8 @@ This will NOT be resized:
 
 `[metro 100 @active 1 @defer 1 @quantize 1].`
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.patcher.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
@@ -320,6 +334,8 @@ Passing only one argument sets the lower range limit of bl.slider, but it will s
 
 Passing two arguments sets the range limits of bl.slider in both ends, and bl.slider won't adapt to the range of incoming numbers.
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.slider.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
@@ -328,6 +344,8 @@ Passing two arguments sets the range limits of bl.slider in both ends, and bl.sl
 ##### Dependencies: Ease (get it from the Package Manager)
 Provides an easy-to-use interface to sequence interpolation between snapshots made with [bl.viewersnaps](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps) or [bl.viewersnaps+](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps-1).
 
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.snap.seq.gif)
+
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
@@ -335,6 +353,8 @@ Provides an easy-to-use interface to sequence interpolation between snapshots ma
 #### Align sources on a line
 ##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Aligns an arbitrary number of sources on a line between the first and the last source index in the order defined as arguments.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.sourceline.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -349,6 +369,8 @@ Separates paths, filenames and file extensions. Folder strings pass through the 
 ### bl.split~
 #### Split an audio stream into frequency bands
 Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.split~.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -365,6 +387,8 @@ Decodes a 3-dimensional Higher Order Ambisonics stream into UHJ Stereo. It uses 
 #### Snapshots for spat5.viewer or spat5.oper
 ##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer or spat5.oper.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.viewersnaps.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -391,5 +415,7 @@ Usage:
 3) For 'fixed' mode provide a yaw angle at the 1st inlet, and use the 1st outlet as yaw value for the source fed to the viewer or the oper. This will be the relative-to-source direction the source will always look at.
 
 4) For 'lookat' mode provide a reference point and use the 2nd outlet as yaw value for the source fed to the viewer or the oper. In this case, the source will always look at the reference point.
+
+![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.yawfix.gif)
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
