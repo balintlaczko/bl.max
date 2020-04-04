@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 137.0, 123.0, 562.0, 531.0 ],
+		"rect" : [ 100.0, 100.0, 562.0, 531.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,21 +40,21 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-1",
-					"lastchannelcount" : 30,
+					"lastchannelcount" : 24,
 					"maxclass" : "mc.live.gain~",
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "multichannelsignal", "", "float", "list" ],
 					"parameter_enable" : 1,
-					"patching_rect" : [ 10.0, 351.0, 256.0, 157.0 ],
+					"patching_rect" : [ 10.0, 351.0, 176.0, 167.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_mmax" : 6.0,
-							"parameter_shortname" : "Each band",
-							"parameter_type" : 0,
 							"parameter_unitstyle" : 4,
 							"parameter_mmin" : -70.0,
-							"parameter_longname" : "Each band"
+							"parameter_longname" : "Each band",
+							"parameter_mmax" : 6.0,
+							"parameter_shortname" : "Each band",
+							"parameter_type" : 0
 						}
 
 					}
@@ -127,20 +127,20 @@
 								"selection" : [ 0.0, 1.0 ],
 								"loop" : 1,
 								"content_state" : 								{
-									"pitchshift" : [ 1.0 ],
 									"originallength" : [ 0.0, "ticks" ],
-									"slurtime" : [ 0.0 ],
+									"originallengthms" : [ 0.0 ],
 									"originaltempo" : [ 120.0 ],
 									"basictuning" : [ 440 ],
-									"quality" : [ "basic" ],
+									"pitchshift" : [ 1.0 ],
 									"pitchcorrection" : [ 0 ],
-									"formant" : [ 1.0 ],
 									"followglobaltempo" : [ 0 ],
-									"speed" : [ 1.0 ],
-									"originallengthms" : [ 0.0 ],
+									"slurtime" : [ 0.0 ],
 									"timestretch" : [ 0 ],
-									"mode" : [ "basic" ],
 									"formantcorrection" : [ 0 ],
+									"quality" : [ "basic" ],
+									"speed" : [ 1.0 ],
+									"mode" : [ "basic" ],
+									"formant" : [ 1.0 ],
 									"play" : [ 0 ]
 								}
 
@@ -165,7 +165,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
 					"patching_rect" : [ 10.0, 261.0, 106.0, 22.0 ],
-					"text" : "bl.split~ 30 1024 4"
+					"text" : "bl.split~ 24 4096 4"
 				}
 
 			}
@@ -209,8 +209,8 @@
 			}
 , 			{
 				"name" : "calcBands.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "../../../Library/gendsp",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/code",
+				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
