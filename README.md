@@ -16,6 +16,9 @@ Happy patching!
 - [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer)
 - [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp)
 - [bl.decode32](https://github.com/balintlaczko/bl.max/tree/master#bldecode32)
+- [bl.dict.interpolate](https://github.com/balintlaczko/bl.max/tree/master#bldictinterpolate)
+- [bl.dict.isempty](https://github.com/balintlaczko/bl.max/tree/master#bldictisempty)
+- [bl.directivity.shaper~](https://github.com/balintlaczko/bl.max/tree/master#bldirectivityshaper~)
 
 ### bl.3dviewer
 #### 3-dimensional viewer for spat5.viewer or spat5.oper
