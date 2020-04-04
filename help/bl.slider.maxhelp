@@ -39,6 +39,19 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"hidden" : 1,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 270.0, 269.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bubble" : 1,
 					"id" : "obj-96",
 					"maxclass" : "comment",
@@ -69,7 +82,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 497.0, 71.0, 22.0 ],
-					"text" : "-2. 3."
+					"text" : "-2.8 3."
 				}
 
 			}
@@ -93,7 +106,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 24.0, 420.0, 71.0, 22.0 ],
-					"text" : "-1. 10."
+					"text" : "-2.8 10."
 				}
 
 			}
@@ -519,6 +532,14 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-94", 0 ],
+					"hidden" : 1,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-71", 0 ],
 					"source" : [ "obj-69", 0 ]
 				}
@@ -655,8 +676,8 @@
 			}
 , 			{
 				"name" : "makeIntoBp.js",
-				"bootpath" : "~/Documents/Max 8/Library/JS",
-				"patcherrelativepath" : "../../../Library/JS",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
