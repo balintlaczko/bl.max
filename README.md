@@ -72,7 +72,7 @@ Speaker#1 is always red.
 #### Convert abstractions into bpatchers
 Automatically creates a bpatcher with a specified width and height from an abstraction. To use it, simply drop it somewhere in the abstraction you want to use as a bpatcher. In case there are arguments defined for the abstraction bl.autobp fetches these and passes them through its outlet in the created bpatcher (like a patcherargs object).
 
-In the bl package several abstractions rely on bl.autobp, such as bl.slider, bl.snap.seq or [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer).
+In the bl package several abstractions rely on bl.autobp, such as [bl.slider](https://github.com/balintlaczko/bl.max/tree/master#blslider), [bl.snap.seq](https://github.com/balintlaczko/bl.max/tree/master#blsnapseq) or [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -113,7 +113,7 @@ Splits the incoming audio into an arbitrary number of perceptually equal-width b
 
 ### bl.extract~
 #### Extract part of a frequency range
-Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands and outputs a chosen one. It is basically a timesaver combination of a bl.split~ and an bl.mc.channel~.
+Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands and outputs a chosen one. It is basically a timesaver combination of a [bl.split~](https://github.com/balintlaczko/bl.max/tree/master#blsplit) and an [bl.mc.channel~](https://github.com/balintlaczko/bl.max/tree/master#blmcchannel).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -140,7 +140,7 @@ This is a generic tool to sample any kind of data stream and output it as a coll
 
 
 ### bl.gest.play~
-#### Play back gestures from a polybuffer~ recorded by bl.gest.record~
+#### Play back gestures from a polybuffer~ recorded by [bl.gest.record~](https://github.com/balintlaczko/bl.max/tree/master#blgestrecord)
 This is the tool for playing back previously recorded gestures. After you switch on the device, you can lauch clips from the polybuffer~. The rate (default: 10 ms) will define the speed of the playback. If you play a sequence which was sampled at a 10 ms rate at the time of recording, choosing 10 ms rate results in speed=1 playback, 20 ms will be half-speed, etc.
 
 You can use the donebang to for example launch another random clip from the polybuffer, perhaps with a different rate, etc.
@@ -224,35 +224,35 @@ Fetches the values of all connected patterns (bl.p.objects) and outputs a dictio
 
 ### bl.p.drunk
 #### Step in a drunken walk in a pattern sequence
-Generates an event stream where each consecutive output is a randomly chosen element (from the sequence defined as a list of arguments) within the distance from the last element defined by drunk step size. Similar to bl.p.rand.
+Generates an event stream where each consecutive output is a randomly chosen element (from the sequence defined as a list of arguments) within the distance from the last element defined by drunk step size. Similar to [bl.p.rand](https://github.com/balintlaczko/bl.max/tree/master#blprand).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.rand
 #### Step randomly in a pattern sequence
-Generates an event stream where each consecutive output is a randomly chosen element in the sequence defined as a list of arguments. Inspired by PRand in SuperCollider.
+Generates an event stream where each consecutive output is a randomly chosen element in the sequence defined as a list of arguments. Inspired by PRand in [SuperCollider](https://supercollider.github.io/download).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.seq
 #### Step through a pattern sequence
-Generates an event stream where each consecutive output is the next step in the sequence defined as a list of arguments. Inspired by PSeq in SuperCollider.
+Generates an event stream where each consecutive output is the next step in the sequence defined as a list of arguments. Inspired by PSeq in [SuperCollider](https://supercollider.github.io/download).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.urn
 #### Step through a pattern sequence in random order
-Generates an event stream where each consecutive output is a step in the randomly reordered sequence defined as a list of arguments. Similar to bl.p.rand.
+Generates an event stream where each consecutive output is a step in the randomly reordered sequence defined as a list of arguments. Similar to [bl.p.rand](https://github.com/balintlaczko/bl.max/tree/master#blprand) and [bl.p.seq](https://github.com/balintlaczko/bl.max/tree/master#blpseq).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.white
 #### Random numbers in a range as a pattern
-Generates an event stream where each consecutive output is a randomly chosen float number in the range defined by the 2nd and 3rd arguments. Inspired by PWhite in SuperCollider.
+Generates an event stream where each consecutive output is a randomly chosen float number in the range defined by the 2nd and 3rd arguments. Inspired by PWhite in [SuperCollider](https://supercollider.github.io/download).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
@@ -326,7 +326,7 @@ Passing two arguments sets the range limits of bl.slider in both ends, and bl.sl
 ### bl.snap.seq
 #### Sequence snapshot interpolation
 ##### Dependencies: Ease (get it from the Package Manager)
-Provides an easy-to-use interface to sequence interpolation between snapshots made with bl.viewersnaps or bl.viewersnaps+.
+Provides an easy-to-use interface to sequence interpolation between snapshots made with [bl.viewersnaps](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps) or [bl.viewersnaps+](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps-1).
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
