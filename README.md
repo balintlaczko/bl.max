@@ -49,6 +49,8 @@ Happy patching!
 - [bl.split~](https://github.com/balintlaczko/bl.max/tree/master#blsplit)
 - [bl.uhjdecoder~](https://github.com/balintlaczko/bl.max/tree/master#bluhjdecoder)
 - [bl.viewersnaps](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps)
+- [bl.viewersnaps+](https://github.com/balintlaczko/bl.max/tree/master#blviewersnaps-1)
+- [bl.yawfix](https://github.com/balintlaczko/bl.max/tree/master#blyawfix)
 
 
 ### bl.3dviewer
