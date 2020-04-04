@@ -54,6 +54,7 @@ Happy patching!
 
 ### bl.3dviewer
 #### 3-dimensional viewer for spat5.viewer or spat5.oper
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Interprets messages from a connected spat5.viewer or spat5.oper object and visualizes the sources and speakers in a 3D scene.
 
 Usage:
@@ -104,6 +105,7 @@ Returns 1 if the dict is empty, and 0 if the dict is not empty. The dictionary c
 
 ### bl.directivity.shaper~
 #### Spatialize an audio spectrum
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Splits the incoming audio into an arbitrary number of perceptually equal-width bands and encodes them as virtual sound sources in Higher-Order Ambisonics. The virtual sources can be positioned by interacting with the (wrapped-in) spat5.viewer.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -323,6 +325,7 @@ Passing two arguments sets the range limits of bl.slider in both ends, and bl.sl
 
 ### bl.snap.seq
 #### Sequence snapshot interpolation
+##### Dependencies: Ease (get it from the Package Manager)
 Provides an easy-to-use interface to sequence interpolation between snapshots made with bl.viewersnaps or bl.viewersnaps+.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -330,6 +333,7 @@ Provides an easy-to-use interface to sequence interpolation between snapshots ma
 
 ### bl.sourceline
 #### Align sources on a line
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Aligns an arbitrary number of sources on a line between the first and the last source index in the order defined as arguments.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -351,6 +355,7 @@ Splits the incoming audio into an arbitrary number of perceptually equal-width f
 
 ### bl.uhjdecoder~
 #### Decode HOA to UHJ with Spat5
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Decodes a 3-dimensional Higher Order Ambisonics stream into UHJ Stereo. It uses spat5.hoa.reduce~ in compensation mode to get 1st order ambisonics, which gets converted into B-format (FuMa), which in turn gets decoded into UHJ.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -358,6 +363,7 @@ Decodes a 3-dimensional Higher Order Ambisonics stream into UHJ Stereo. It uses 
 
 ### bl.viewersnaps
 #### Snapshots for spat5.viewer or spat5.oper
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer or spat5.oper.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -365,6 +371,7 @@ Provides an easy-to-acces interface to storing, recalling and interpolating betw
 
 ### bl.viewersnaps+
 #### Snapshots for spat5.viewer or spat5.oper with gen
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 The abstraction provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer of spat5.oper. It is similar to bl.viewersnaps but rather than driven by a js script, this uses a gen script. This enables using it in the scheduler (high priority) thread and results in a general speed boost.
 
 [back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
@@ -372,6 +379,7 @@ The abstraction provides an easy-to-acces interface to storing, recalling and in
 
 ### bl.yawfix
 #### Fixate the yaw of a virtual source in spat5
+##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
 Continuously compensates the shift in a source's yaw as it changes position in order to fixate the yaw to a certain direction.
 
 Usage:
