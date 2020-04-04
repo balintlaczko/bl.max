@@ -253,12 +253,12 @@
 									"patching_rect" : [ 21.0, 259.0, 48.0, 136.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_shortname" : "choppy",
-											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_mmin" : -70.0,
 											"parameter_longname" : "choppy",
-											"parameter_mmax" : 6.0
+											"parameter_mmax" : 6.0,
+											"parameter_shortname" : "choppy",
+											"parameter_type" : 0
 										}
 
 									}
@@ -974,12 +974,12 @@
 									"patching_rect" : [ 223.0, 274.0, 38.0, 86.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
-											"parameter_shortname" : "boom",
-											"parameter_type" : 0,
 											"parameter_unitstyle" : 4,
 											"parameter_mmin" : -70.0,
 											"parameter_longname" : "boom",
-											"parameter_mmax" : 6.0
+											"parameter_mmax" : 6.0,
+											"parameter_shortname" : "boom",
+											"parameter_type" : 0
 										}
 
 									}
@@ -1264,7 +1264,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 622.0, 466.0 ],
+						"rect" : [ 0.0, 26.0, 622.0, 466.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1378,7 +1378,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 404.0, 386.0, 50.0, 22.0 ],
-									"text" : "2"
+									"text" : "3"
 								}
 
 							}
@@ -1390,7 +1390,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 12.0, 386.0, 50.0, 22.0 ],
-									"text" : "eladio"
+									"text" : "bolsa"
 								}
 
 							}
@@ -1414,7 +1414,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 333.0, 276.0, 50.0, 22.0 ],
-									"text" : "1"
+									"text" : "3"
 								}
 
 							}
@@ -1426,7 +1426,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 12.0, 276.0, 50.0, 22.0 ],
-									"text" : "fring"
+									"text" : "bolsa"
 								}
 
 							}
@@ -1663,7 +1663,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 283.0, 392.0, 50.0, 22.0 ],
-									"text" : "4"
+									"text" : "2"
 								}
 
 							}
@@ -1675,7 +1675,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 15.0, 392.0, 50.0, 22.0 ],
-									"text" : "40"
+									"text" : "20"
 								}
 
 							}
@@ -1727,7 +1727,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 167.0, 259.0, 50.0, 22.0 ],
-									"text" : "2"
+									"text" : "1"
 								}
 
 							}
@@ -1739,7 +1739,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 15.0, 259.0, 50.0, 22.0 ],
-									"text" : "20"
+									"text" : "10"
 								}
 
 							}
@@ -1988,7 +1988,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 276.0, 324.0, 50.0, 22.0 ],
-									"text" : "2"
+									"text" : "4"
 								}
 
 							}
@@ -2000,7 +2000,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 10.0, 324.0, 50.0, 22.0 ],
-									"text" : "20"
+									"text" : "40"
 								}
 
 							}
@@ -2137,7 +2137,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 622.0, 466.0 ],
+						"rect" : [ 100.0, 126.0, 622.0, 466.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2186,7 +2186,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 57.0, 403.0, 78.0, 22.0 ],
-									"text" : "10 20 40 30"
+									"text" : "30 20 10 40"
 								}
 
 							}
@@ -2313,7 +2313,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 111.0, 510.0, 35.0 ],
-									"text" : "The abstraction generates an event stream where each consecutive output is a step in the randomly reordered sequence defined as a list of arguments. Similar to bl.p.rand.",
+									"text" : "The abstraction generates an event stream where each consecutive output is a step in the randomly reordered sequence defined as a list of arguments. Similar to bl.p.rand and bl.p.seq.",
 									"textcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ]
 								}
 
@@ -2423,8 +2423,8 @@
 			}
 , 			{
 				"name" : "bl.seq.js",
-				"bootpath" : "~/Documents/Max 8/Library/JS",
-				"patcherrelativepath" : "../../../Library/JS",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
