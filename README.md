@@ -65,12 +65,16 @@ Speaker#1 is always red.
 4) Drag the handle in the middle to rotate the image; clicking on "reset" or double-clicking anywhere (but the handle in the middle) on the spat3D window also resets the view to default position/orientation. Alt/Option + click&drag zooms, Cmd/Ctrl + click&drag repositions the image.
 5) Use WSAD keys to move around, and Q & Z to ascend/descend.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.autobp
 #### Convert abstractions into bpatchers
 Automatically creates a bpatcher with a specified width and height from an abstraction. To use it, simply drop it somewhere in the abstraction you want to use as a bpatcher. In case there are arguments defined for the abstraction bl.autobp fetches these and passes them through its outlet in the created bpatcher (like a patcherargs object).
 
 In the bl package several abstractions rely on bl.autobp, such as bl.slider, bl.snap.seq or [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer).
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.decode32
@@ -82,40 +86,56 @@ Usage:
 2) Cmd/Ctrl + click on the button connected to bl.decode32 (while you are still in editing mode and the 2 objects remain selected).
 3) Alternatively Cmd/Ctrl + click on a number (representing the HOA order) while the encoder and the decoder remain selected.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.dict.interpolate
 #### Interpolate between two dictionaries
 Given two dictionaries which have identical keynames with the same type of value data, the object interpolates between the stored values based on the ratio, given as a float ranging from 0 to 1, where 0 represents the dictionary in the left input, and 1 represents the dictionary in the right input.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.dict.isempty
 #### Check if a dictionary is empty
 Returns 1 if the dict is empty, and 0 if the dict is not empty. The dictionary can either be specified as an argument, or simply passed to the abstraction.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.directivity.shaper~
 #### Spatialize an audio spectrum
 Splits the incoming audio into an arbitrary number of perceptually equal-width bands and encodes them as virtual sound sources in Higher-Order Ambisonics. The virtual sources can be positioned by interacting with the (wrapped-in) spat5.viewer.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.extract~
 #### Extract part of a frequency range
 Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands and outputs a chosen one. It is basically a timesaver combination of a bl.split~ and an bl.mc.channel~.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.folddegree
 #### Fold any degree into the range of -180° to 180°
 Expresses any degree with the equivalent one in the range of -180° to 180°.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.genlist
 #### Generate a list as a range of integers
 Generates a list of integer numbers with the first argument being the bottom of the range and the second being the top. Both numbers are included in the list.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.gest.capture
 #### Capture anything as a gesture
 This is a generic tool to sample any kind of data stream and output it as a coll, where the coll indices represent the elapsed time in milliseconds. This is done by a JS script, so the timing of the samples will not be as accurate as if it was a gen script, but for general purposes it is still pretty good. It can also come handy when we don't know the structure or type of the data beforehand, the object doesn't require that the number or type of the features remain the same throughout the recording ("anything goes").
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.gest.play~
@@ -124,6 +144,8 @@ This is the tool for playing back previously recorded gestures. After you switch
 
 You can use the donebang to for example launch another random clip from the polybuffer, perhaps with a different rate, etc.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.gest.record~
 #### Record gestures into a polybuffer~
@@ -131,30 +153,42 @@ This is the tool to record gestures with. After you switch on the device, it is 
 
 The benefit of recording gestures into audio buffers is that you can have better time precision, the possibility to record extremely long sequences, and use the synergy with some built-in Max objects, such as simple buffer~-based playback tools, such as play~, wave~ or groove~.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.getrange
 #### Get the range of a number stream
 Keeps track of the running range of a number stream. The numbers can be passed as integers, floats or lists.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.indexof
 #### Get the index of an element in a list
 Returns the 0-based index of a given element in a list (if the element can be found).
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.interp.xy~
 #### Generate interpolating XY coordinates
 Generates individually interpolating XY coordinates for an arbitrary number of instances (points). The interpolation time is randomly chosen for each point (at each new interpolation) between the minimum and maximum interpolation time.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.keylatch
 #### Toggle with pressing and releasing a key
 Outputs 1 while a key is pressed down, and 0 when it is released. It is essentially a simple timesaver combination of key and keyup.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.lim
 #### Limit the rate of a data stream with gating
 Similar to qlim or speedlim, with the difference that it drops (rather than postpones) every incoming message which arrives faster than the defined time interval (ms).
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.looper~
@@ -163,45 +197,63 @@ Can be in many ways considered to be similar to a groove~, with some enhancement
 
 Note: be careful with samplerates, this won't adapt to files having different SR from the current SR of the audio interface.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.mc.channel~
 #### Extract channel at an index from an mc signal
 Passes through only one channel at the defined index (1-based) from an incoming mc.signal. You can define the chosen index dynamically by sending an integer to the left inlet.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.mc.snapshot~
 #### Take snapshot of an mc signal and output it as a list
 Similar to snapshot~ or mc.snapshot~, but it outputs the values as a list.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.p.bind
 #### Bind the output of several patterns into a dictionary
 Fetches the values of all connected patterns (bl.p.objects) and outputs a dictionary with the current value of each pattern. It can also act as a clock causing the output of connected patterns.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.drunk
 #### Step in a drunken walk in a pattern sequence
 Generates an event stream where each consecutive output is a randomly chosen element (from the sequence defined as a list of arguments) within the distance from the last element defined by drunk step size. Similar to bl.p.rand.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.p.rand
 #### Step randomly in a pattern sequence
 Generates an event stream where each consecutive output is a randomly chosen element in the sequence defined as a list of arguments. Inspired by PRand in SuperCollider.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.p.seq
 #### Step through a pattern sequence
 Generates an event stream where each consecutive output is the next step in the sequence defined as a list of arguments. Inspired by PSeq in SuperCollider.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.p.urn
 #### Step through a pattern sequence in random order
 Generates an event stream where each consecutive output is a step in the randomly reordered sequence defined as a list of arguments. Similar to bl.p.rand.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.p.white
 #### Random numbers in a range as a pattern
 Generates an event stream where each consecutive output is a randomly chosen float number in the range defined by the 2nd and 3rd arguments. Inspired by PWhite in SuperCollider.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.patcher (or bl.p)
@@ -249,10 +301,14 @@ This will NOT be resized:
 
 `[metro 100 @active 1 @defer 1 @quantize 1].`
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.randlist
 #### Generate a sorted list of random floats in a range
 Generates a list of float numbers of an arbitrary size with the first argument being the size of the list, the second being the bottom of the range and the third being the top.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.slider
@@ -263,40 +319,56 @@ Passing only one argument sets the lower range limit of bl.slider, but it will s
 
 Passing two arguments sets the range limits of bl.slider in both ends, and bl.slider won't adapt to the range of incoming numbers.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.snap.seq
 #### Sequence snapshot interpolation
 Provides an easy-to-use interface to sequence interpolation between snapshots made with bl.viewersnaps or bl.viewersnaps+.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.sourceline
 #### Align sources on a line
 Aligns an arbitrary number of sources on a line between the first and the last source index in the order defined as arguments.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.splitext
 #### Separate paths from filenames and extensions
 Separates paths, filenames and file extensions. Folder strings pass through the last outlet.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.split~
 #### Split an audio stream into frequency bands
 Splits the incoming audio into an arbitrary number of perceptually equal-width frequency bands.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.uhjdecoder~
 #### Decode HOA to UHJ with Spat5
 Decodes a 3-dimensional Higher Order Ambisonics stream into UHJ Stereo. It uses spat5.hoa.reduce~ in compensation mode to get 1st order ambisonics, which gets converted into B-format (FuMa), which in turn gets decoded into UHJ.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.viewersnaps
 #### Snapshots for spat5.viewer or spat5.oper
 Provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer or spat5.oper.
 
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+
 
 ### bl.viewersnaps+
 #### Snapshots for spat5.viewer or spat5.oper with gen
 The abstraction provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer of spat5.oper. It is similar to bl.viewersnaps but rather than driven by a js script, this uses a gen script. This enables using it in the scheduler (high priority) thread and results in a general speed boost.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
 
 
 ### bl.yawfix
@@ -312,3 +384,5 @@ Usage:
 3) For 'fixed' mode provide a yaw angle at the 1st inlet, and use the 1st outlet as yaw value for the source fed to the viewer or the oper. This will be the relative-to-source direction the source will always look at.
 
 4) For 'lookat' mode provide a reference point and use the 2nd outlet as yaw value for the source fed to the viewer or the oper. In this case, the source will always look at the reference point.
+
+[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
