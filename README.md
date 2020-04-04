@@ -306,6 +306,7 @@ Caveats:
 In the resulting subpatcher every object- or messagebox should have its width correctly resized to fit its contents. UI objects - like \[toggle\], \[filtergraph~\], \[live.gain~\], etc. - won't get resized. However, this only goes for the built-in UI objects in Max (and some others in a few other packages).
 
 You can also prevent an object from being resized with placing a dot after the object's closing bracket:
+
 This will be resized to fit its contents:
 
 `[metro 100 @active 1 @defer 1 @quantize 1]`
