@@ -13,9 +13,9 @@ bl.snap.seq needs the Ease packace, you can download it from the Package Manager
 Happy patching!
 
 ## Table of contents
-- [bl.3dviewer](https://github.com/balintlaczko/bl.max/new/master?readme=1#bl3dviewer)
-- [bl.autobp](https://github.com/balintlaczko/bl.max/new/master?readme=1#blautobp)
-- [bl.decode32](https://github.com/balintlaczko/bl.max/new/master?readme=1#bldecode32)
+- [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer)
+- [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp)
+- [bl.decode32](https://github.com/balintlaczko/bl.max/tree/master#bldecode32)
 
 ### bl.3dviewer
 #### 3-dimensional viewer for spat5.viewer or spat5.oper
