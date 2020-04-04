@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 455.0, 297.0, 670.0, 364.0 ],
+		"rect" : [ 455.0, 297.0, 667.0, 364.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -91,7 +91,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 57.206896551724185, 237.0, 21.0 ],
+									"patching_rect" : [ 140.0, 54.206896551724185, 237.0, 21.0 ],
 									"text" : "Split an audio stream into frequency bands"
 								}
 
@@ -103,7 +103,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 32.103448275862092, 188.0, 21.0 ],
+									"patching_rect" : [ 140.0, 30.103448275862092, 188.0, 21.0 ],
 									"text" : "Extract part of a frequency range"
 								}
 
@@ -115,7 +115,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 7.0, 162.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 162.0, 21.0 ],
 									"text" : "Spatialize an audio spectrum"
 								}
 
@@ -135,7 +135,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -155,7 +155,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 32.103448275862092, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 30.103448275862092, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -175,7 +175,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 57.206896551724185, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 54.206896551724185, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -212,9 +212,9 @@
 , 							{
 								"name" : "Default M4L",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -223,9 +223,9 @@
 , 							{
 								"name" : "Default M4L Poletti",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 10.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -234,6 +234,9 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontsize" : [ 11.0 ],
+									"fontname" : [ "Arial" ],
+									"fontface" : [ 1 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -242,10 +245,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -271,6 +271,8 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
+									"fontname" : [ "Arial" ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -279,9 +281,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontsize" : [ 9.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -355,7 +355,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -390,7 +390,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 55.0, 195.0, 21.0 ],
+									"patching_rect" : [ 140.0, 54.0, 195.0, 21.0 ],
 									"text" : "Record gestures into a polybuffer~"
 								}
 
@@ -402,7 +402,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 31.0, 366.0, 21.0 ],
+									"patching_rect" : [ 140.0, 30.0, 366.0, 21.0 ],
 									"text" : "Play back gestures from a polybuffer~ recorded by bl.gest.record~"
 								}
 
@@ -414,7 +414,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 7.0, 169.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 169.0, 21.0 ],
 									"text" : "Capture anything as a gesture"
 								}
 
@@ -434,7 +434,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -454,7 +454,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 31.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 30.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -474,7 +474,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 55.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 54.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -512,7 +512,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -547,7 +547,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 32.0, 166.0, 21.0 ],
+									"patching_rect" : [ 140.0, 30.0, 166.0, 21.0 ],
 									"text" : "Check if a dictionary is empty"
 								}
 
@@ -559,7 +559,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 6.0, 206.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 206.0, 21.0 ],
 									"text" : "Interpolate between two dictionaries"
 								}
 
@@ -579,7 +579,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 4.0, 6.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -599,7 +599,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 4.0, 32.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 30.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -637,7 +637,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -672,7 +672,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 131.166666666666686, 224.0, 21.0 ],
+									"patching_rect" : [ 140.0, 125.166666666666686, 224.0, 21.0 ],
 									"text" : "Random numbers in a range as a pattern"
 								}
 
@@ -684,7 +684,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 106.333333333333314, 274.0, 21.0 ],
+									"patching_rect" : [ 140.0, 101.333333333333314, 274.0, 21.0 ],
 									"text" : "Step through a pattern sequence in random order"
 								}
 
@@ -696,7 +696,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 81.5, 185.0, 21.0 ],
+									"patching_rect" : [ 140.0, 77.5, 185.0, 21.0 ],
 									"text" : "Step through a pattern sequence"
 								}
 
@@ -708,7 +708,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 56.666666666666657, 205.0, 21.0 ],
+									"patching_rect" : [ 140.0, 53.666666666666657, 205.0, 21.0 ],
 									"text" : "Step randomly in a pattern sequence"
 								}
 
@@ -720,7 +720,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 31.833333333333343, 247.0, 21.0 ],
+									"patching_rect" : [ 140.0, 29.833333333333343, 247.0, 21.0 ],
 									"text" : "Step in a drunken walk in a pattern sequence"
 								}
 
@@ -732,7 +732,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 7.0, 285.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 285.0, 21.0 ],
 									"text" : "Bind the output of several patterns into a dictionary"
 								}
 
@@ -752,7 +752,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -772,7 +772,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 31.833333333333343, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 29.833333333333343, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -792,7 +792,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 56.666666666666657, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 53.666666666666657, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -812,7 +812,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 81.5, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 77.5, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -832,7 +832,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 106.333333333333314, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 101.333333333333314, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -852,7 +852,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 131.166666666666686, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 125.166666666666686, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -890,7 +890,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -925,7 +925,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 229.821284924612314, 230.0, 21.0 ],
+									"patching_rect" : [ 140.0, 219.821284924612314, 230.0, 21.0 ],
 									"text" : "Fixate the yaw of a virtual source in spat5"
 								}
 
@@ -937,7 +937,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 205.063364377433118, 279.0, 21.0 ],
+									"patching_rect" : [ 140.0, 196.063364377433118, 279.0, 21.0 ],
 									"text" : "Snapshots for spat5.viewer or spat5.oper with gen"
 								}
 
@@ -949,7 +949,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 180.305443830254035, 231.0, 21.0 ],
+									"patching_rect" : [ 140.0, 172.305443830254035, 231.0, 21.0 ],
 									"text" : "Snapshots for spat5.viewer or spat5.oper"
 								}
 
@@ -961,7 +961,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 155.547523283074952, 177.0, 21.0 ],
+									"patching_rect" : [ 140.0, 148.547523283074952, 177.0, 21.0 ],
 									"text" : "Decode HOA to UHJ with Spat5"
 								}
 
@@ -973,7 +973,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 130.789602735895755, 127.0, 21.0 ],
+									"patching_rect" : [ 140.0, 124.789602735895755, 127.0, 21.0 ],
 									"text" : "Align sources on a line"
 								}
 
@@ -985,7 +985,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 106.031682188716672, 185.0, 21.0 ],
+									"patching_rect" : [ 140.0, 101.031682188716672, 185.0, 21.0 ],
 									"text" : "Sequence snapshot interpolation"
 								}
 
@@ -997,7 +997,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 81.273761641537476, 215.0, 21.0 ],
+									"patching_rect" : [ 140.0, 77.273761641537476, 215.0, 21.0 ],
 									"text" : "Generate interpolating XY coordinates"
 								}
 
@@ -1009,7 +1009,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 56.515841094358279, 162.0, 21.0 ],
+									"patching_rect" : [ 140.0, 53.515841094358279, 162.0, 21.0 ],
 									"text" : "Spatialize an audio spectrum"
 								}
 
@@ -1021,7 +1021,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 31.757920547179197, 278.0, 21.0 ],
+									"patching_rect" : [ 140.0, 29.757920547179197, 278.0, 21.0 ],
 									"text" : "Connect a 3D ambisonics encoder to a 2D decoder"
 								}
 
@@ -1033,7 +1033,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.0, 7.0, 288.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 288.0, 21.0 ],
 									"text" : "3-dimensional viewer for spat5.viewer or spat5.oper"
 								}
 
@@ -1053,7 +1053,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1073,7 +1073,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 31.757920547179197, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 29.757920547179197, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1093,7 +1093,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 56.515841094358279, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 53.515841094358279, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1113,7 +1113,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 81.273761641537476, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 77.273761641537476, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1133,7 +1133,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 106.031682188716672, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 101.031682188716672, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1153,7 +1153,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 130.789602735895755, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 124.789602735895755, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1173,7 +1173,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 155.547523283074952, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 148.547523283074952, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1193,7 +1193,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 180.305443830254035, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 172.305443830254035, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1213,7 +1213,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 205.063364377433118, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 196.063364377433118, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1233,7 +1233,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 7.0, 229.821284924612314, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 219.821284924612314, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1270,9 +1270,9 @@
 , 							{
 								"name" : "Default M4L",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1281,9 +1281,9 @@
 , 							{
 								"name" : "Default M4L Poletti",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 10.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1292,6 +1292,9 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontsize" : [ 11.0 ],
+									"fontname" : [ "Arial" ],
+									"fontface" : [ 1 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -1300,10 +1303,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -1329,6 +1329,8 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
+									"fontname" : [ "Arial" ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -1337,9 +1339,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontsize" : [ 9.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -1357,8 +1357,8 @@
 , 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -1377,6 +1377,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1386,8 +1387,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1461,7 +1461,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1496,7 +1496,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 86.047619047619037, 270.0, 21.0 ],
+									"patching_rect" : [ 140.0, 77.047619047619037, 270.0, 21.0 ],
 									"text" : "Generate a sorted list of random floats in a range"
 								}
 
@@ -1508,7 +1508,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 59.698412698412653, 205.0, 21.0 ],
+									"patching_rect" : [ 140.0, 53.698412698412653, 205.0, 21.0 ],
 									"text" : "Get the index of an element in a list"
 								}
 
@@ -1520,7 +1520,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 32.849206349206383, 189.0, 21.0 ],
+									"patching_rect" : [ 140.0, 29.849206349206383, 189.0, 21.0 ],
 									"text" : "Get the range of a number stream"
 								}
 
@@ -1532,7 +1532,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 7.0, 205.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 205.0, 21.0 ],
 									"text" : "Generate a list as a range of integers"
 								}
 
@@ -1552,7 +1552,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1572,7 +1572,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 33.349206349206383, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 30.349206349206383, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1592,7 +1592,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 59.698412698412653, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 53.698412698412653, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1612,7 +1612,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 86.047619047619037, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 77.047619047619037, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1650,7 +1650,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1685,7 +1685,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 57.322580645161338, 185.0, 21.0 ],
+									"patching_rect" : [ 140.0, 54.322580645161338, 185.0, 21.0 ],
 									"text" : "Sequence snapshot interpolation"
 								}
 
@@ -1697,7 +1697,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 32.161290322580612, 185.0, 21.0 ],
+									"patching_rect" : [ 140.0, 30.161290322580612, 185.0, 21.0 ],
 									"text" : "Adaptive slider with value display"
 								}
 
@@ -1709,7 +1709,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 7.0, 288.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 288.0, 21.0 ],
 									"text" : "3-dimensional viewer for spat5.viewer or spat5.oper"
 								}
 
@@ -1729,7 +1729,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 7.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1749,7 +1749,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 32.161290322580612, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 30.161290322580612, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1769,7 +1769,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 57.322580645161338, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 54.322580645161338, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1806,9 +1806,9 @@
 , 							{
 								"name" : "Default M4L",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1817,9 +1817,9 @@
 , 							{
 								"name" : "Default M4L Poletti",
 								"default" : 								{
-									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ],
 									"fontsize" : [ 10.0 ],
-									"fontname" : [ "Arial Bold" ]
+									"fontname" : [ "Arial Bold" ],
+									"patchlinecolor" : [ 0.290196, 0.309804, 0.301961, 0.85 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1828,6 +1828,9 @@
 , 							{
 								"name" : "Default M4L-1",
 								"default" : 								{
+									"fontsize" : [ 11.0 ],
+									"fontname" : [ "Arial" ],
+									"fontface" : [ 1 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -1836,10 +1839,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontface" : [ 1 ],
-									"fontsize" : [ 11.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -1865,6 +1865,8 @@
 , 							{
 								"name" : "jbb",
 								"default" : 								{
+									"fontsize" : [ 9.0 ],
+									"fontname" : [ "Arial" ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
@@ -1873,9 +1875,7 @@
 										"angle" : 270.0,
 										"proportion" : 0.39
 									}
-,
-									"fontsize" : [ 9.0 ],
-									"fontname" : [ "Arial" ]
+
 								}
 ,
 								"parentstyle" : "",
@@ -1949,7 +1949,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1984,7 +1984,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 67.0, 168.0, 21.0 ],
+									"patching_rect" : [ 140.0, 65.0, 168.0, 21.0 ],
 									"text" : "Generate subpatchers quickly"
 								}
 
@@ -1996,7 +1996,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 30.716049382716051, 278.0, 21.0 ],
+									"patching_rect" : [ 140.0, 29.716049382716051, 278.0, 21.0 ],
 									"text" : "Connect a 3D ambisonics encoder to a 2D decoder"
 								}
 
@@ -2008,7 +2008,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 6.0, 205.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 205.0, 21.0 ],
 									"text" : "Convert abstractions into bpatchers"
 								}
 
@@ -2028,7 +2028,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 6.0, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 6.0, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2048,7 +2048,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 30.716049382716051, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 29.716049382716051, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2068,7 +2068,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 55.432098765432102, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 53.432098765432102, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2088,7 +2088,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 5.0, 80.148148148148152, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 77.148148148148152, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2098,8 +2098,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -2118,6 +2118,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2127,8 +2128,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2175,13 +2175,13 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 670.0, 338.0 ],
+						"rect" : [ 0.0, 26.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
-						"gridonopen" : 1,
+						"gridonopen" : 2,
 						"gridsize" : [ 15.0, 15.0 ],
 						"gridsnaponopen" : 1,
 						"objectsnaponopen" : 1,
@@ -2210,7 +2210,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 55.349206349206383, 189.0, 21.0 ],
+									"patching_rect" : [ 140.0, 53.349206349206383, 189.0, 21.0 ],
 									"text" : "Get the range of a number stream"
 								}
 
@@ -2230,7 +2230,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 55.349206349206383, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 53.349206349206383, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2242,7 +2242,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 253.922330097087496, 255.0, 21.0 ],
+									"patching_rect" : [ 140.0, 243.922330097087496, 255.0, 21.0 ],
 									"text" : "Separate paths from filenames and extensions"
 								}
 
@@ -2254,7 +2254,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 217.042071197411133, 168.0, 21.0 ],
+									"patching_rect" : [ 140.0, 209.042071197411133, 168.0, 21.0 ],
 									"text" : "Generate subpatchers quickly"
 								}
 
@@ -2266,7 +2266,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 179.28155339805835, 283.0, 21.0 ],
+									"patching_rect" : [ 140.0, 172.28155339805835, 283.0, 21.0 ],
 									"text" : "Take snapshot of an mc signal and output it as a list"
 								}
 
@@ -2278,7 +2278,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 154.401294498381958, 251.0, 21.0 ],
+									"patching_rect" : [ 140.0, 148.401294498381958, 251.0, 21.0 ],
 									"text" : "Extract channel at an index from an mc signal"
 								}
 
@@ -2290,7 +2290,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 129.521035598705566, 221.0, 21.0 ],
+									"patching_rect" : [ 140.0, 124.521035598705566, 221.0, 21.0 ],
 									"text" : "Generic click-free buffer playback tool  "
 								}
 
@@ -2302,7 +2302,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 104.640776699029161, 233.0, 21.0 ],
+									"patching_rect" : [ 140.0, 100.640776699029161, 233.0, 21.0 ],
 									"text" : "Limit the rate of a data stream with gating"
 								}
 
@@ -2314,7 +2314,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 79.760517799352783, 226.0, 21.0 ],
+									"patching_rect" : [ 140.0, 76.760517799352783, 226.0, 21.0 ],
 									"text" : "Toggle with pressing and releasing a key"
 								}
 
@@ -2326,7 +2326,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 30.880258899676388, 262.0, 21.0 ],
+									"patching_rect" : [ 140.0, 29.880258899676388, 262.0, 21.0 ],
 									"text" : "Fold any degree into the range of -180° to 180°"
 								}
 
@@ -2338,7 +2338,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 148.0, 6.0, 205.0, 21.0 ],
+									"patching_rect" : [ 140.0, 6.0, 205.0, 21.0 ],
 									"text" : "Convert abstractions into bpatchers"
 								}
 
@@ -2378,7 +2378,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 30.880258899676388, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 29.880258899676388, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2398,7 +2398,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 79.760517799352783, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 76.760517799352783, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2418,7 +2418,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 104.640776699029161, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 100.640776699029161, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2438,7 +2438,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 129.521035598705566, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 124.521035598705566, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2458,7 +2458,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 154.401294498381958, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 148.401294498381958, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2478,7 +2478,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 179.28155339805835, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 172.28155339805835, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2498,7 +2498,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 204.161812297734741, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 196.161812297734741, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2518,7 +2518,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 229.042071197411133, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 220.042071197411133, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2538,7 +2538,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 6.0, 253.922330097087496, 126.0, 20.0 ],
+									"patching_rect" : [ 6.0, 243.922330097087496, 126.0, 20.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2576,7 +2576,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 455.0, 323.0, 670.0, 338.0 ],
+						"rect" : [ 455.0, 323.0, 667.0, 338.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
