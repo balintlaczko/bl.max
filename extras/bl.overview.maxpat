@@ -2699,7 +2699,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 9.0, 5.987179487179489, 647.0, 66.0 ],
+									"patching_rect" : [ 9.0, 6.987179487179489, 647.0, 66.0 ],
 									"text" : "Welcome to the bl package!"
 								}
 
