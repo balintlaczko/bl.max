@@ -8,7 +8,7 @@ If you have questions, requests, or you want to make a bug report, just open a n
 
 Some of the abstractions need the Spat5 (IRCAM) package to work. You can download it [here](https://forum.ircam.fr/projects/detail/spat/)! (I am not affiliated with IRCAM, just a happy user.)
 
-bl.snap.seq needs the Ease packace, you can download it from the Package Manager!
+[bl.snap.seq](#blsnapseq) needs the Ease packace, you can download it from the Package Manager!
 
 Happy patching!
 
