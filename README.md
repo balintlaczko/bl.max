@@ -2,9 +2,9 @@
 
 I am Bálint Laczkó, composer, developer, and Max-freak. This package consists of (mostly) abstractions I have been developing for my creative work or just for fun. Some of them are just simple timesavers, some of them caused some serious head-scratching... :) I hope they can be of use in your work as well!
 
-The toolbox is constantly growing, so it might be worth to check the repo every once in a while.
+The toolbox is constantly growing, so it might be worth to check [the repo](https://github.com/balintlaczko/bl.max) every once in a while.
 
-If you have questions, requests, or you want to make a bug report, just open a new Issue on this repository. That would be a great help for me to improve this package. I welcome pull requests as well!
+If you have questions, requests, or you want to make a bug report, just open a new [Issue](https://github.com/balintlaczko/bl.max/issues) on this repository. That would be a great help for me to improve this package. I welcome pull requests as well!
 
 Some of the abstractions need the Spat5 (IRCAM) package to work. You can download it [here](https://forum.ircam.fr/projects/detail/spat/)! (I am not affiliated with IRCAM, just a happy user.)
 
