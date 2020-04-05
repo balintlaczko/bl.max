@@ -13,7 +13,7 @@ bl.snap.seq needs the Ease packace, you can download it from the Package Manager
 Happy patching!
 
 ## Table of contents
-- [bl.3dviewer](https://github.com/balintlaczko/bl.max/tree/master#bl3dviewer) | 3-dimensional viewer for spat5.viewer or spat5.oper
+- [bl.3dviewer](#bl3dviewer) | 3-dimensional viewer for spat5.viewer or spat5.oper
 - [bl.autobp](https://github.com/balintlaczko/bl.max/tree/master#blautobp) | Convert abstractions into bpatchers
 - [bl.decode32](https://github.com/balintlaczko/bl.max/tree/master#bldecode32) | Connect a 3D ambisonics encoder to a 2D decoder
 - [bl.dict.interpolate](https://github.com/balintlaczko/bl.max/tree/master#bldictinterpolate) | Interpolate between two dictionaries
@@ -67,7 +67,7 @@ Speaker#1 is always red.
 
 ![](https://github.com/balintlaczko/bl.max/blob/master/media/bl.3dviewer.gif)
 
-[back to table of contents](https://github.com/balintlaczko/bl.max/blob/master/README.md#table-of-contents)
+[back to table of contents](#table-of-contents)
 
 
 ### bl.autobp
