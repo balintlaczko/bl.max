@@ -39,7 +39,7 @@ Happy patching!
 - [bl.p.seq](#blpseq) | Step through a pattern sequence
 - [bl.p.urn](#blpurn) | Step through a pattern sequence in random order
 - [bl.p.white](#blpwhite) | Random numbers in a range as a pattern
-- [bl.patcher](#blpatcher) | Generate subpatchers quickly
+- [bl.patcher](#blpatcher-or-blp) | Generate subpatchers quickly
 - [bl.randlist](#blrandlist) | Generate a sorted list of random floats in a range
 - [bl.slider](#blslider) | Adaptive slider with value display
 - [bl.snap.seq](#blsnapseq) | Sequence snapshot interpolation
