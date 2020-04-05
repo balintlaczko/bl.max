@@ -397,7 +397,7 @@ Provides an easy-to-acces interface to storing, recalling and interpolating betw
 ### bl.viewersnaps+
 #### Snapshots for spat5.viewer or spat5.oper with gen
 ##### Dependencies: [spat5](https://forum.ircam.fr/projects/detail/spat/)
-The abstraction provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer of spat5.oper. It is similar to bl.viewersnaps but rather than driven by a js script, this uses a gen script. This enables using it in the scheduler (high priority) thread and results in a general speed boost.
+The abstraction provides an easy-to-acces interface to storing, recalling and interpolating between snapshots of positions of objects in a spat5.viewer of spat5.oper. It is similar to [bl.viewersnaps](#blviewersnaps) but rather than driven by a js script, this uses a gen script. This enables using it in the scheduler (high priority) thread and results in a general speed boost.
 
 [back to table of contents](#table-of-contents)
 
