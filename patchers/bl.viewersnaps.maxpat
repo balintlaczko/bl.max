@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 1,
+			"minor" : 1,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 114.0, 124.0, 885.0, 591.0 ],
+		"rect" : [ 114.0, 124.0, 1015.0, 591.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,18 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 735.10009765625, 96.0, 31.0, 22.0 ],
+					"text" : "qlim"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"comment" : "connect this to the viewer's dump outlet",
 					"id" : "obj-98",
@@ -115,11 +127,11 @@
 				"box" : 				{
 					"id" : "obj-90",
 					"maxclass" : "newobj",
-					"numinlets" : 6,
-					"numoutlets" : 6,
-					"outlettype" : [ "", "", "", "", "", "" ],
-					"patching_rect" : [ 257.5, 47.0, 616.0, 22.0 ],
-					"text" : "routepass store recall import export xsnapshot"
+					"numinlets" : 7,
+					"numoutlets" : 7,
+					"outlettype" : [ "", "", "", "", "", "", "" ],
+					"patching_rect" : [ 257.5, 47.0, 735.400146484375, 22.0 ],
+					"text" : "routepass store recall import export xsnapshot xmulti"
 				}
 
 			}
@@ -131,6 +143,10 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 12.0, 79.0, 214.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0
+					}
+,
 					"text" : "spat5.converter @initwith \"/format xyz\""
 				}
 
@@ -166,7 +182,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 735.0999755859375, 77.0, 114.0, 22.0 ],
+					"patching_rect" : [ 735.10009765625, 129.0, 114.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "xsnapdict.js",
 						"parameter_enable" : 0
@@ -316,6 +332,11 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 12.0, 113.0, 92.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
 					"text" : "spat5.osc.todict"
 				}
 
@@ -328,12 +349,24 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 12.0, 47.0, 199.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
 					"text" : "spat5.osc.routepass /*/*/aed /*/*/xyz"
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-38", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-9", 0 ],
 					"source" : [ "obj-16", 0 ]
@@ -408,7 +441,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-95", 0 ],
-					"midpoints" : [ 744.5999755859375, 514.5, 57.5, 514.5 ],
+					"midpoints" : [ 744.60009765625, 514.5, 57.5, 514.5 ],
 					"source" : [ "obj-38", 0 ]
 				}
 
@@ -461,7 +494,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-38", 0 ],
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-90", 5 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-90", 4 ]
 				}
 

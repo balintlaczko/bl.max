@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-31",
@@ -226,7 +227,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "int" ],
 					"patching_rect" : [ 8.0, 11.0, 30.0, 30.0 ]
 				}
 
@@ -238,7 +239,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 251.5, 285.5, 171.0, 22.0 ],
+					"patching_rect" : [ 251.5, 285.5, 185.0, 22.0 ],
 					"text" : "combine #1 . 0 @triggers 2"
 				}
 
@@ -370,7 +371,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "jit_matrix", "jit_matrix", "" ],
-					"patching_rect" : [ 149.0, 451.0, 110.0, 22.0 ],
+					"patching_rect" : [ 149.0, 451.0, 124.0, 22.0 ],
 					"text" : "jit.buffer~ #1_to"
 				}
 
@@ -382,7 +383,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 179.5, 346.5, 135.0, 22.0 ],
+					"patching_rect" : [ 179.5, 346.5, 149.0, 22.0 ],
 					"text" : "to #1_to, channels #2"
 				}
 
@@ -466,7 +467,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 408.0, 43.0, 159.0, 22.0 ],
+					"patching_rect" : [ 408.0, 43.0, 173.0, 22.0 ],
 					"text" : "buffer~ #1_to @samps #2"
 				}
 

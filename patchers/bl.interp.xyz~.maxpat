@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 706.0, 371.0, 735.0, 267.0 ],
+		"rect" : [ 706.0, 371.0, 735.0, 399.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,49 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-10",
+					"id" : "obj-14",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 370.000000000000057, 154.0, 85.0, 22.0 ],
+					"patching_rect" : [ 374.0, 250.0, 85.0, 22.0 ],
 					"text" : "routepass rate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "list" ],
+					"patching_rect" : [ 323.0, 284.0, 136.0, 22.0 ],
+					"text" : "bl.snapshot~ @rate 100"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 166.5, 250.0, 85.0, 22.0 ],
+					"text" : "routepass rate"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "list" ],
+					"patching_rect" : [ 115.5, 284.0, 136.0, 22.0 ],
+					"text" : "bl.snapshot~ @rate 100"
 				}
 
 			}
@@ -114,11 +150,11 @@
 				"box" : 				{
 					"comment" : "mc signal: current interpolation time for each instance",
 					"id" : "obj-58",
-					"index" : 4,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 356.0, 225.0, 30.0, 30.0 ]
+					"patching_rect" : [ 449.0, 325.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -126,11 +162,11 @@
 				"box" : 				{
 					"comment" : "mc signal: list of XY positions",
 					"id" : "obj-57",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 180.75, 225.0, 30.0, 30.0 ]
+					"patching_rect" : [ 199.833333333333371, 329.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -138,11 +174,11 @@
 				"box" : 				{
 					"comment" : "list: current interpolation time for each instance",
 					"id" : "obj-48",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 319.0, 225.0, 30.0, 30.0 ]
+					"patching_rect" : [ 323.0, 325.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -150,11 +186,11 @@
 				"box" : 				{
 					"comment" : "list: list of XY positions",
 					"id" : "obj-47",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 142.0, 225.0, 30.0, 30.0 ]
+					"patching_rect" : [ 115.5, 329.0, 30.0, 30.0 ]
 				}
 
 			}
@@ -162,7 +198,7 @@
 				"box" : 				{
 					"comment" : "signal, int, float: interpolation time max (ms)",
 					"id" : "obj-42",
-					"index" : 3,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -173,21 +209,9 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-39",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "list" ],
-					"patching_rect" : [ 319.0, 187.0, 136.0, 22.0 ],
-					"text" : "bl.snapshot~ @rate 100"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"comment" : "signal, int, float: interpolation time min (ms)",
 					"id" : "obj-38",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -200,11 +224,11 @@
 				"box" : 				{
 					"comment" : "toggle device (0/1), scale (default=1), rate (default=100)",
 					"id" : "obj-37",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 14.166666666666686, 13.0, 30.0, 30.0 ]
 				}
 
@@ -218,18 +242,6 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 14.166666666666686, 50.0, 83.0, 22.0 ],
 					"text" : "route int scale"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-29",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "list" ],
-					"patching_rect" : [ 142.0, 187.0, 136.0, 22.0 ],
-					"text" : "bl.snapshot~ @rate 100"
 				}
 
 			}
@@ -262,11 +274,11 @@
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "multichannelsignal" ],
-					"patching_rect" : [ 142.0, 154.0, 107.5, 22.0 ],
-					"text" : "mc.interleave~ 2"
+					"patching_rect" : [ 142.0, 158.0, 145.666666666666686, 22.0 ],
+					"text" : "mc.interleave~ 3"
 				}
 
 			}
@@ -287,10 +299,10 @@
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
-					"patching_rect" : [ 142.0, 121.0, 196.0, 22.0 ],
-					"text" : "mc.gen~ sourceInterp @chans #1"
+					"numoutlets" : 4,
+					"outlettype" : [ "multichannelsignal", "multichannelsignal", "multichannelsignal", "multichannelsignal" ],
+					"patching_rect" : [ 142.0, 121.0, 209.0, 22.0 ],
+					"text" : "mc.gen~ sourceInterp_3d @chans #1"
 				}
 
 			}
@@ -304,23 +316,14 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
-					"order" : 1,
+					"destination" : [ "obj-47", 0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-39", 0 ],
-					"order" : 0,
-					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-29", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"order" : 1,
 					"source" : [ "obj-11", 0 ]
 				}
@@ -336,9 +339,37 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-13", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-48", 0 ],
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
 					"midpoints" : [ 53.0, 154.0, 139.0, 154.0, 139.0, 118.0, 151.5, 118.0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 2 ],
+					"source" : [ "obj-2", 2 ]
 				}
 
 			}
@@ -358,9 +389,9 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-39", 0 ],
+					"destination" : [ "obj-15", 0 ],
 					"order" : 1,
-					"source" : [ "obj-2", 2 ]
+					"source" : [ "obj-2", 3 ]
 				}
 
 			}
@@ -368,7 +399,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
 					"order" : 0,
-					"source" : [ "obj-2", 2 ]
+					"source" : [ "obj-2", 3 ]
 				}
 
 			}
@@ -381,13 +412,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 0 ],
-					"source" : [ "obj-29", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-3", 0 ]
 				}
@@ -395,7 +419,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
+					"destination" : [ "obj-13", 0 ],
+					"order" : 1,
+					"source" : [ "obj-36", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 0,
 					"source" : [ "obj-36", 2 ]
 				}
 
@@ -430,13 +463,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 0 ],
-					"source" : [ "obj-39", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -451,7 +477,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
+					"destination" : [ "obj-13", 0 ],
+					"order" : 1,
+					"source" : [ "obj-5", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"order" : 0,
 					"source" : [ "obj-5", 4 ]
 				}
 
@@ -491,7 +526,20 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "bl.snapshot~.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "sourceInterp_3d.gendsp",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/code",
+				"patcherrelativepath" : "../code",
+				"type" : "gDSP",
+				"implicit" : 1
+			}
+ ],
+		"autosave" : 0
 	}
 
 }

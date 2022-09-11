@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-5",
@@ -89,7 +90,7 @@
 				"box" : 				{
 					"comment" : "Audio Out (MC)",
 					"id" : "obj-2",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -101,7 +102,7 @@
 				"box" : 				{
 					"comment" : "Audio In (mono)",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -117,8 +118,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 55.5, 65.0, 83.0, 22.0 ],
-					"text" : "bl.genlist 1 #1"
+					"patching_rect" : [ 55.5, 65.0, 148.0, 22.0 ],
+					"text" : "bl.genlist @from 1 @to #1"
 				}
 
 			}
@@ -196,30 +197,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "splitIntoManyExp.maxpat",
-				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : "../../../Library",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "calcBands.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "../../../Library/gendsp",
-				"type" : "gDSP",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "bl.genlist.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
