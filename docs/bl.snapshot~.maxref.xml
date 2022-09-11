@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.snapshot~">
+
+	<digest>
+		Take snapshot of an mc signal and output it as a list
+	</digest>
+	
+	<description>
+		Similar to snapshot~ or mc.snapshot~, but it outputs the values as a list. 
+		It is the external object equivalent of the bl.mc.snapshot~ abstraction, 
+		except that it has a built-in change filter.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">audio</metadata>
+		<metadata name="tag">mc</metadata>
+		<metadata name="tag">utility</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="signal/mc.signal">
+			<digest>The multichannel (or single channel) signal to snapshot</digest>
+		</inlet>
+	</inletlist>
+
+	<!--OUTLETS-->
+	<outletlist>
+		<outlet id="0" type="list">
+			<digest>The snapshot of the multichannel signal as a list</digest>
+		</outlet>
+	</outletlist>
+
+    <!--ATTRIBUTES-->
+​
+    <attributelist>
+​
+        <attribute name='active' get='1' set='1' type='long' size='1' >
+            <digest>Enable periodic output</digest>
+        </attribute>
+
+        <attribute name='rate' get='1' set='1' type='long/float' size='1' >
+			<digest>
+				The rate of the list output. Default is 100 ms.
+			</digest>
+        </attribute>
+
+		<attribute name='changefilter' get='1' set='1' type='long' size='1' >
+            <digest>Enable internal change filter</digest>
+			<description>
+				When set the object will only output a list when the incoming signal has changed.
+			</description>
+        </attribute>
+​
+    </attributelist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="snapshot~"/>
+		<seealso name="mc.snapshot~"/>
+		<seealso name="bl.mc.snapshot~"/>
+	</seealsolist>
+	
+</c74object>

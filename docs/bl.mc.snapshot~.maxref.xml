@@ -48,6 +48,7 @@
 	<seealsolist>
 		<seealso name="snapshot~"/>
 		<seealso name="mc.snapshot~"/>
+		<seealso name="bl.snapshot~"/>
 	</seealsolist>
 	
 </c74object>

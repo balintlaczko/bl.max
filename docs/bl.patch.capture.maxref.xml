@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+
+<c74object name="bl.patch.capture">
+
+	<digest>
+		Capture a patch area into a png file
+	</digest>
+	
+	<description>
+		Captures a defined rectangle in the patch into a png file. The png will be saved in the same folder where the patch
+		is saved. If used in abstractions, the abstraction patch needs to be opened, but can be occluded by other windows
+		or minimized to the desktop.
+	</description>
+	
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name="author">Balint Laczko</metadata>
+		<metadata name="tag">bl</metadata>
+		<metadata name="tag">patch</metadata>
+		<metadata name="tag">capture</metadata>
+		<metadata name="tag">image</metadata>
+	</metadatalist>
+	
+	<!--INLETS-->
+	<inletlist>
+		<inlet id="0" type="list">
+			<digest>Bang to output, or set rect, name, dpi</digest>
+		</inlet>
+	</inletlist>
+	
+	<!--MESSAGES-->
+	<methodlist>
+		<method name="bang">
+			<digest>
+				Write png file
+			</digest>
+			<description>
+				Write png file of the current rect in the patch view.
+			</description>
+		</method>
+	</methodlist>
+
+    <!--ATTRIBUTES-->
+​
+    <attributelist>
+​
+        <attribute name='name' get='1' set='1' type='symbol' size='1' >
+            <digest>File name</digest>
+            <description>File name for the output file, like "myimage.png".</description>
+        </attribute>
+​
+        <attribute name='rect' get='1' set='1' type='long-array' size='4' >
+            <digest>X, Y, Width, Height</digest>
+            <description>The rectangle area to capture.</description>
+        </attribute>
+
+		<attribute name='dpi' get='1' set='1' type='long' size='1' >
+            <digest>DPI</digest>
+            <description>
+			The resolution (in DPI) of the output image. The object uses the 
+			jgraphics_image_surface_writepng() API method, which for some reason
+			seems to ignore the passed long for the dpi and outputs a 300 DPI 
+			image in all cases... Hopefully this will be solved in the future.
+			</description>
+        </attribute>
+​
+    </attributelist>
+	
+	<!--SEEALSO-->
+	<seealsolist>
+		<seealso name="jit.desktop"/>
+	</seealsolist>
+	
+</c74object>
