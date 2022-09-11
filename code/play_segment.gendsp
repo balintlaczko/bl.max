@@ -1,0 +1,116 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 8,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 59.0, 106.0, 600.0, 629.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 536.0, 591.0, 35.0, 22.0 ],
+					"text" : "out 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "History ramp, from, to, fades_sr, playing, minlength(200), ducksig, bufout;\r\n\r\nBuffer buf(\"buf\");\r\nBuffer bounds(\"bounds\");\r\n\r\nParam fades(0);\r\nParam buf_sr(44100);\r\n\r\nif (playing) {\r\n\tramp += buf_sr / samplerate;\r\n\tif (ramp >= to) {\r\n\t\tplaying = 0;\r\n\t}\r\n}\r\n\r\nif (change(in1)==1 && !playing) {\r\n\tplaying = 1;\r\n\tfrom = peek(bounds, 0) / 1000 * buf_sr;\r\n\tto = peek(bounds, 1) / 1000 * buf_sr;\r\n\tramp = from;\r\n\tfades_sr = fades / 1000 * buf_sr;\r\n\tfades_sr = clamp(fades_sr, 0, (to-from)/2 - 2);\r\n}\r\n\r\nif (ramp >= from && ramp <= (from + fades_sr)) {\r\n\tducksig = 1 - (((from+fades_sr)-ramp) / fades_sr);\r\n} else if (ramp >= (to - fades_sr)) {\r\n\tducksig = 1 - ((ramp - (to - fades_sr)) / fades_sr);\r\n} else {\r\n\tducksig = 1;\r\n}\r\n\r\nducksig = clamp(ducksig, 0, 1);\r\n\r\nbufout = sample(buf, ramp, mc_channel-1, index=\"samples\", channels=1);\r\nisplaying = playing == 1;\r\n\r\nout1 = bufout * ducksig * isplaying;\r\nout2 = isplaying;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 50.0, 50.0, 529.0, 519.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 50.0, 14.0, 28.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 50.0, 591.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0
+	}
+
+}

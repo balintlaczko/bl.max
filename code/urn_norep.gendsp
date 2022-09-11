@@ -1,0 +1,97 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 8,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ -1035.0, 281.0, 553.0, 685.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"code" : "History counter, shuffled, init(0);\r\n\r\nData steps(1000);\r\n\r\nParam size(10);\r\n\r\nif (init == 0 || change(size)) {\r\n\tfor (i=0; i < size; i+=1) {\r\n\t\tpoke(steps, i+1, i);\r\n\t}\r\n\tfor (i=size-1; i > 0; i-= 1) {\r\n\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\tai = peek(steps, i);\r\n\t\taj = peek(steps, j);\r\n\t\tpoke(steps, aj, i);\r\n\t\tpoke(steps, ai, j);\r\n\t}\r\n\tinit = 1;\r\n\tcounter = 0;\r\n}\r\n\r\nval = peek(steps, counter);\r\n\r\ncounter += 1;\r\ncounter = wrap(counter, 0, size);\r\n\r\nif (change(counter)==-1) {\r\n\tfor (i=size-1; i > 0; i-= 1) {\r\n\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\tai = peek(steps, i);\r\n\t\taj = peek(steps, j);\r\n\t\tpoke(steps, aj, i);\r\n\t\tpoke(steps, ai, j);\r\n\t}\r\n\tshuffled = 1;\r\n}\r\nelse {\r\n\tshuffled = 0;\r\n}\r\n\r\nout1 = val;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-6",
+					"maxclass" : "codebox",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 50.0, 46.0, 462.0, 569.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 50.0, 14.0, 28.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 50.0, 630.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+ ]
+	}
+
+}

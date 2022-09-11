@@ -1,0 +1,98 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 8,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 603.0, 92.0, 711.0, 656.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"code" : "History val, next_stepsize, minval(0), maxval(299), init, counter_f, counter_b;\r\nHistory attempts, prev_val;\r\nData steps_f(1000);\r\nData steps_b(1000);\r\n\r\nParam maxsize(300);\r\nParam forward_chance(0.5);\r\nParam forward_stepsize(5);\r\nParam backward_stepsize(5);\r\nParam wrap(0);\r\nParam maxiterations(100);\r\n\r\nif (init == 0 || change(forward_stepsize)) {\r\n\tfor (i=0; i < forward_stepsize; i+=1) {\r\n\t\tpoke(steps_f, i+1, i);\r\n\t}\r\n\tfor (i=forward_stepsize-1; i > 0; i-= 1) {\r\n\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\tai = peek(steps_f, i);\r\n\t\taj = peek(steps_f, j);\r\n\t\tpoke(steps_f, aj, i);\r\n\t\tpoke(steps_f, ai, j);\r\n\t}\r\n\tcounter_f = 0;\r\n}\r\n\r\nif (init == 0 || change(backward_stepsize)) {\r\n\tfor (i=0; i < backward_stepsize; i+=1) {\r\n\t\tpoke(steps_b, (i+1)*-1, i);\r\n\t}\r\n\tfor (i=backward_stepsize-1; i > 0; i-= 1) {\r\n\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\tai = peek(steps_b, i);\r\n\t\taj = peek(steps_b, j);\r\n\t\tpoke(steps_b, aj, i);\r\n\t\tpoke(steps_b, ai, j);\r\n\t}\r\n\tinit = 1;\r\n\tcounter_b = 0;\r\n}\r\n\r\nminval = clamp(minval, 0, maxval - 1);\r\nmaxval = clamp(maxval, minval, maxsize - 1);\r\n\r\nattempts = 0;\r\nwhile (prev_val == val && attempts < maxiterations) {\r\n\r\n\tsteps_forward = scale(noise(), -1, 1, 0, 1) <= forward_chance;\r\n\tdirection = steps_forward? 1 : -1;\r\n\r\n\tif (steps_forward) {\r\n\t\tnext_stepsize = peek(steps_f, counter_f);\r\n\r\n\t\tcounter_f += 1;\r\n\t\tcounter_f = wrap(counter_f, 0, forward_stepsize);\r\n\r\n\t\tif (change(counter_f)==-1) {\r\n\t\t\tfor (i=forward_stepsize-1; i > 0; i-= 1) {\r\n\t\t\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\t\t\tai = peek(steps_f, i);\r\n\t\t\t\taj = peek(steps_f, j);\r\n\t\t\t\tpoke(steps_f, aj, i);\r\n\t\t\t\tpoke(steps_f, ai, j);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\telse {\r\n\t\tnext_stepsize = peek(steps_b, counter_b);\r\n\r\n\t\tcounter_b += 1;\r\n\t\tcounter_b = wrap(counter_b, 0, backward_stepsize);\r\n\r\n\t\tif (change(counter_b)==-1) {\r\n\t\t\tfor (i=backward_stepsize-1; i > 0; i-= 1) {\r\n\t\t\t\tj = round(scale(noise(), -1, 1, 0, i));\r\n\t\t\t\tai = peek(steps_b, i);\r\n\t\t\t\taj = peek(steps_b, j);\r\n\t\t\t\tpoke(steps_b, aj, i);\r\n\t\t\t\tpoke(steps_b, ai, j);\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n\r\n\tif (wrap) {\r\n\t\tval = wrap(val + next_stepsize, minval, maxval);\r\n\t} else {\r\n\t\tval = clamp(val + next_stepsize, minval, maxval);\r\n\t}\r\n\tattempts += 1;\r\n}\r\n\r\nprev_val = val;\r\nout1 = val;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 14.0, 37.0, 670.0, 572.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 14.0, 10.0, 28.0, 22.0 ],
+					"text" : "in 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 14.0, 618.0, 35.0, 22.0 ],
+					"text" : "out 1"
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+ ],
+		"autosave" : 0
+	}
+
+}

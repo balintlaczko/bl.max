@@ -1,0 +1,188 @@
+{
+	"patcher" : 	{
+		"fileversion" : 1,
+		"appversion" : 		{
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 4,
+			"architecture" : "x64",
+			"modernui" : 1
+		}
+,
+		"classnamespace" : "dsp.gen",
+		"rect" : [ 928.0, 85.0, 566.0, 740.0 ],
+		"bglocked" : 0,
+		"openinpresentation" : 0,
+		"default_fontsize" : 12.0,
+		"default_fontface" : 0,
+		"default_fontname" : "Arial",
+		"gridonopen" : 1,
+		"gridsize" : [ 15.0, 15.0 ],
+		"gridsnaponopen" : 1,
+		"objectsnaponopen" : 1,
+		"statusbarvisible" : 2,
+		"toolbarvisible" : 1,
+		"lefttoolbarpinned" : 0,
+		"toptoolbarpinned" : 0,
+		"righttoolbarpinned" : 0,
+		"bottomtoolbarpinned" : 0,
+		"toolbars_unpinned_last_save" : 0,
+		"tallnewobj" : 0,
+		"boxanimatetime" : 200,
+		"enablehscroll" : 1,
+		"enablevscroll" : 1,
+		"devicewidth" : 0.0,
+		"description" : "",
+		"digest" : "",
+		"tags" : "",
+		"style" : "",
+		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
+		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 345.0, 704.0, 210.0, 22.0 ],
+					"text" : "out 5 @comment \"standard deviation\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 404.75, 665.0, 133.0, 22.0 ],
+					"text" : "out 4 @comment mean"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 274.5, 633.0, 155.0, 22.0 ],
+					"text" : "out 3 @comment maximum"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 144.25, 665.0, 152.0, 22.0 ],
+					"text" : "out 2 @comment minimum"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 345.0, 13.0, 188.0, 22.0 ],
+					"text" : "in 2 @comment \"non-zero resets\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"code" : "History count, v_min, v_max, v_mean, v_prev_mean, v_s, v_stddev;\r\n\r\n//in2 is for resetting, so if there is a \r\n//non-zero incoming number there\r\nif (in2 > 0) {\r\n\r\n\t//reset stats\r\n\tcount = 0;\r\n\tv_min = 0;\r\n\tv_max = 0;\r\n\tv_mean = 0;\r\n\tv_prev_mean = 0;\r\n\tv_s = 0;\r\n\tv_stddev = 0;\r\n\t\r\n//if not resetting\r\n} else {\r\n\tif (count == 0) {\r\n\t\tv_min = in1;\r\n\t\tv_max = in1;\r\n\t} else {\r\n\t\tif (in1 < v_min) {\r\n\t\t\tv_min = in1;\r\n\t\t}\r\n\t\tif (in1 > v_max) {\r\n\t\t\tv_max = in1;\r\n\t\t}\r\n\t}\r\n\tv_prev_mean = v_mean;\r\n\tcount += 1;\r\n\tv_mean = v_mean + (in1 - v_mean) / count;\r\n\tv_s = v_s + ((in1 - v_mean) * (in1 - v_prev_mean));\r\n\tv_stddev = pow(v_s/(count-1), 0.5);\r\n}\r\n\r\nout1 = count;\r\nout2 = v_min;\r\nout3 = v_max;\r\nout4 = v_mean;\r\nout5 = v_stddev;",
+					"fontface" : 0,
+					"fontname" : "<Monospaced>",
+					"fontsize" : 12.0,
+					"id" : "obj-5",
+					"maxclass" : "codebox",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 14.0, 42.0, 540.0, 582.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 14.0, 13.0, 173.0, 22.0 ],
+					"text" : "in 1 @comment \"input sample\""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 14.0, 633.0, 214.0, 22.0 ],
+					"text" : "out 1 @comment \"number of samples\""
+				}
+
+			}
+ ],
+		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-5", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 0 ],
+					"source" : [ "obj-5", 3 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-14", 0 ],
+					"source" : [ "obj-5", 4 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-5", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 1 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+ ]
+	}
+
+}

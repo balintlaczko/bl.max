@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 0,
-			"revision" : 8,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-8",
@@ -85,9 +86,9 @@
 			}
 , 			{
 				"box" : 				{
-					"code" : "Buffer from(\"from\");\r\nBuffer to(\"to\");\r\n\r\nHistory position, done;\r\n\r\nParam playing, channels;\r\n\r\nif (change(playing)) {\r\n\tposition = 0;\r\n}\r\n\r\nif (done || change(in2) || in3) {\r\n\tposition = 0;\r\n}\r\n\r\n\r\nif (playing) {\r\n\tfor (i=0; i < dim(to); i+= 1) {\r\n\t\tfor (j=0; j < channels; j+= 1) {\r\n\t\t\tval = peek(from, position, j, boundmode=\"clip\");\r\n\t\t\tpoke(to, val, j, 0);\r\n\t\t}\r\n\t}\r\n\tif (position == dim(from) - 1) {\r\n\t\tdone = 1;\r\n\t\t//position = 0;\r\n\t} else {\r\n\t\tposition += 1;\r\n\t\tdone = 0;\r\n\t}\t\t\t\r\n}\r\n\r\nout1 = 42;\r\nout2 = max(0, position - 1);\r\nout3 = done;\r\n",
+					"code" : "Buffer from(\"from\");\r\nBuffer to(\"to\");\r\n\r\nHistory position, done;\r\n\r\nParam playing, channels;\r\n\r\nif (change(playing)) {\r\n\tposition = 0;\r\n}\r\n\r\nif (done || change(in2) || in3) {\r\n\tposition = 0;\r\n}\r\n\r\n\r\nif (playing) {\r\n\tfor (i=0; i < dim(to); i+= 1) {\r\n\t\tfor (j=0; j < channels; j+= 1) {\r\n\t\t\tval = peek(from, position, j, boundmode=\"clip\");\r\n\t\t\tpoke(to, val, j, 0);\r\n\t\t}\r\n\t}\r\n\tif (position == dim(from) - 2) {\r\n\t\tdone = 1;\r\n\t\t//position = 0;\r\n\t} else {\r\n\t\tposition += 1;\r\n\t\tdone = 0;\r\n\t}\t\t\t\r\n}\r\n\r\nout1 = 42;\r\nout2 = max(0, position - 1);\r\nout3 = done;\r\n",
 					"fontface" : 0,
-					"fontname" : "Lucida Console",
+					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
 					"maxclass" : "codebox",
@@ -164,8 +165,7 @@
 				}
 
 			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }

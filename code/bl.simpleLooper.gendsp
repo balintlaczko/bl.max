@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 0,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "dsp.gen",
-		"rect" : [ 835.0, 85.0, 730.0, 740.0 ],
+		"rect" : [ 429.0, 126.0, 880.0, 673.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,14 +37,38 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 692.400001999999972, 96.0, 125.0, 22.0 ],
+					"text" : "in 7 @comment seek!"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 692.400001999999972, 615.0, 169.0, 22.0 ],
+					"text" : "out 4 @comment \"Is playing?\""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 540.400001999999972, 66.0, 161.0, 22.0 ],
+					"patching_rect" : [ 578.83333499999992, 65.0, 161.0, 22.0 ],
 					"text" : "in 6 @comment \"fades (ms)\""
 				}
 
@@ -56,7 +80,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.0, 66.0, 145.0, 22.0 ],
+					"patching_rect" : [ 465.266667999999981, 35.0, 145.0, 22.0 ],
 					"text" : "in 5 @comment playbang"
 				}
 
@@ -68,7 +92,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 66.0, 145.0, 22.0 ],
+					"patching_rect" : [ 351.700000999999986, 96.0, 145.0, 22.0 ],
 					"text" : "in 4 @comment stopbang"
 				}
 
@@ -79,7 +103,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 503.400001999999859, 667.0, 198.0, 22.0 ],
+					"patching_rect" : [ 465.266667999999981, 615.0, 198.0, 22.0 ],
 					"text" : "out 3 @comment \"Loopsync (0...1)\""
 				}
 
@@ -90,7 +114,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 341.700000999999986, 612.0, 234.0, 22.0 ],
+					"patching_rect" : [ 238.133333999999991, 642.0, 234.0, 22.0 ],
 					"text" : "out 2 @comment \"Playhead position (ms)\""
 				}
 
@@ -102,7 +126,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 202.0, 36.0, 175.0, 22.0 ],
+					"patching_rect" : [ 238.133333999999991, 65.0, 175.0, 22.0 ],
 					"text" : "in 3 @comment \"loopend (ms)\""
 				}
 
@@ -114,23 +138,23 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 17.200000999999986, 36.0, 178.0, 22.0 ],
+					"patching_rect" : [ 124.566666999999995, 35.0, 178.0, 22.0 ],
 					"text" : "in 2 @comment \"loopstart (ms)\""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"code" : "/*\r\n\r\nSimple buffer playback tool made by Balint Laczko.\r\nOslo, 2019.\r\n\r\n*/\r\n\r\n\r\n//utility: puts the playhead on the starting position based on the sign of the speed\r\nset_start(speed, from, to) {\r\n\tif (speed >= 0) {\r\n\t\treturn from;\r\n\t}\r\n\telse {\r\n\t\treturn to;\r\n\t}\r\n}\r\n\r\n//utility: keeps the loop edges sane (the minimum loop is 50 samples)\r\nclampEdges(from, to, bufferLength) {\r\n\tfrom = clamp(from, 0, to - 50);\r\n\tto = clamp(to, from + 50, bufferLength);\r\n\treturn from, to;\r\n}\r\n\r\n//our variables\t\r\nHistory ramp(0);\r\nHistory ramp_prev(0);\r\nHistory speed(0);\r\nHistory playstate(0);\r\nHistory from(0);\r\nHistory to(0);\r\nHistory ducking(0);\r\nHistory slope(0);\r\nHistory slope_in(0);\r\nHistory slope_out(0);\r\nHistory instantfade(0);\r\nHistory IFstart(0);\r\nHistory IFend(0);\r\nHistory ducksig(0);\r\nHistory stopping(0);\r\nHistory replaying(0);\r\nHistory scrubbing(0);\r\nHistory minLength(200);\r\nHistory inMiddle(0);\r\nHistory onSlopeIn(0);\r\nHistory onSlopeOut(0);\r\nHistory fade(0);\r\nHistory bufLength(0);\r\n\r\n//Option to loop\r\nParam loop(0);\r\n\r\n//Get the buffer and its length\r\nBuffer buf(\"testy\");\r\nbufLength = dim(buf);\r\n\r\n//If playing, increment playhead position by the speed\r\nif (playstate) {\r\n\tramp += speed;\r\n}\r\n\r\n//manage looping:\r\nif (playstate) { //if playing\r\n\tif (loop && !instantfade) { //if we should loop and we're not in the middle of an \"instantfade\"\r\n\t\tif (ramp > to || ramp < from) { //if we are outside the loop bounds\r\n\t\t\t//turn off these flags\r\n\t\t\tonSlopeIn = 0;\r\n\t\t\tonSlopeOut = 0;\r\n\t\t\t//the loop endpoint should not be too close the the start\r\n\t\t\tto = max(to, from + minLength);\r\n\t\t\t//make sure they make sense\r\n\t\t\tfrom, to = clampEdges(from, to, bufLength);\r\n\t\t\t//put the playhead on the starting position\r\n\t\t\tramp = set_start(speed, from, to);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n\r\n//manage stop and play:\r\nif (change(in4) == 1) { //when we get a stopbang\r\n\tif (playstate) { //if we are playing\r\n\t\t//enable these flags\r\n\t\tstopping = 1;\r\n\t\tinstantfade = 1;\r\n\t}\r\n}\r\nelse if (change(in5) == 1) { //when we get a playbang\r\n\tif (playstate) { //if we are playing\r\n\t\tif (!replaying && !ducking) { //don't do anything if we are fading in/out (to avoid clicks)\r\n\t\t\t//enable these flags\r\n\t\t\treplaying = 1;\r\n\t\t\tinstantfade = 1;\r\n\t\t}\r\n\t}\r\n\telse { //if we are not playing\r\n\t\t//start playing (ie. enable \"playstate\" flag)\r\n\t\tplaystate = 1;\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t}\r\n}\r\n\t\r\n//stopping and playing after instant fades:\r\nif (stopping) { //if \"stopping\" flag is active\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//stop playing, clear flags\r\n\t\tplaystate = 0;\r\n\t\tstopping = 0;\r\n\t}\r\n}\r\nelse if (replaying) { //if \"replaying\" flag is active (ie. when we are smashing the play button)\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t\t//keep playing and disable the \"replaying\" flag\r\n\t\tplaystate = 1;\r\n\t\treplaying = 0;\r\n\t}\r\n}\r\nelse if (scrubbing) { //if \"scrubbing\" flag is active (ie. when we are changing loop points really quickly)\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t\t//disable these flags\r\n\t\tinMiddle = 0;\r\n\t\tscrubbing = 0;\r\n\t\t//enable this, so we don't get clicks\r\n\t\tducking = 1;\r\n\t}\r\n}\r\n\r\n//scan speed:\r\nspeed = in1;\r\n\r\n//scan loop edges & fade time:\r\nif (!ducking && !instantfade) { //only scan it when not fading (to avoid clicks)\r\n\tif (change(in2) || change(in3)) {\r\n\t\tfrom = mstosamps(in2);\r\n\t\t//there should always be at least 50 samples \"in the middle\"\r\n\t\tto = 50 + max(from + minLength, mstosamps(in3));\r\n\t}\r\n\t//scan fade time\r\n\tfade = in6;\r\n}\r\n\r\n//if we change buffer size (ie. when reading a new file), reset from to to file bounds\r\nif (change(dim(buf))) {\r\n\tfrom = 0;\r\n\tto = dim(buf);\r\n}\r\n\r\n//create fade-in/fade-out points (there should always be at least 50 samples \"unfaded\" in the middle)\r\nslope = min(minLength + mstosamps(fade), ((to - from) / 2) - 50);\r\nslope_in = from + slope;\r\nslope_out = to - slope;\r\n\r\n/*Tag the signal if it has just touched the fade-in/out points coming from the middle. \r\nThis is important for determining whether we \"jumped\" into the fading regions from the \r\nmiddle or we just \"rolled\" there normally*/\r\nif (inMiddle && ramp <= slope_in && ramp_prev > slope_in) {\r\n\tonSlopeIn = 1;\r\n}\r\nelse if (inMiddle && ramp >= slope_out && ramp_prev < slope_out) {\r\n\tonSlopeOut = 1;\r\n}\r\n\r\n//instantfade mechanism (always has fixed length):\r\nif (change(instantfade) == 1) { //when it gets activated\r\n\t//save where did we start the instantfade\r\n\tIFstart = ramp;\r\n}\r\nif (instantfade) { //while flag is active\r\n\tif (speed >= 0) { //if we are moving forward\r\n\t\t//create the endpoint of the fade\r\n\t\tIFend = IFstart + minLength;\r\n\t\t//calculate the fade and keep \"ducking\" flag on\r\n\t\tducksig = 1 - ((ramp - IFstart) / minLength);\r\n\t\tducking = 1;\r\n\t\tif (ramp > IFend) { //switch off when finished\r\n\t\t\tinstantfade = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t}\r\n\telse { //and if we are moving backwards\r\n\t\t//create the endpoint of the fade\r\n\t\tIFend = IFstart - minLength;\r\n\t\t//calculate the fade and keep \"ducking\" flag on\r\n\t\tducksig = 1 - ((IFstart - ramp) / minLength);\r\n\t\tducking = 1;\r\n\t\tif (ramp < IFend) { //switch off when finished\r\n\t\t\tinstantfade = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t}\r\n\t//keep these flags off while instantfading\r\n\tonSlopeIn = 0;\r\n\tonSlopeOut = 0;\r\n\tinMIddle = 0;\r\n}\r\n//...and regular fade mechanism (length is based on the input fade time):\r\nelse if (!stopping && !replaying && !scrubbing) {  //don't change it in the middle of fading (to avoid clicks)\r\n\tif (ramp < from || ramp > to) { //if we are outside the loop bounds\r\n\t\tif (playstate == 1) { //if playing\r\n\t\t\tif (loop) { //if in loop mode\r\n\t\t\t\t//enable these flags\r\n\t\t\t\tinstantfade = 1;\r\n\t\t\t\tscrubbing = 1;\r\n\t\t\t}\r\n\t\t\telse { //when not looping\r\n\t\t\t\t//just stop, since we \"reached\" the loop end\r\n\t\t\t\tplaystate = 0;\r\n\t\t\t}\r\n\t\t}\r\n\t\telse if (playstate == 0) { //if we are stopped\r\n\t\t\t//just clear the flags\r\n\t\t\tducksig = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t\t//if we are fading we are definitely not in the middle\r\n\t\tinMiddle = 0;\r\n\t}\r\n\telse if (ramp >= from && ramp <= slope_in) { //if we are fading in\r\n\t\tif (inMiddle && !onSlopeIn && playstate) { //if we somehow got to the middle area without touching the fade-in endpoint while playing\r\n\t\t\t//that means we jumped, so let's ask for an instantfade\r\n\t\t\tinstantfade = 1;\r\n\t\t\tscrubbing = 1;\r\n\t\t}\r\n\t\telse { //normally we just calculate the fading signal with some bookkeeping\r\n\t\t\tducksig = 1 - ((slope_in - ramp) / slope);\r\n\t\t\tducking = 1;\r\n\t\t\tinMiddle = 0;\r\n\t\t}\r\n\t}\r\n\telse if (ramp >= slope_out && ramp <= to) { //if we are fading out\r\n\t\tif (inMiddle && !onSlopeOut && playstate) { //if we somehow jumped back to the middle area without touching the fade-out starting point while playing\r\n\t\t\t//that means we jumped, so let's ask for an instantfade\r\n\t\t\tinstantfade = 1;\r\n\t\t\tscrubbing = 1;\r\n\t\t}\r\n\t\telse { //normally we just calculate the fading signal with some bookkeeping\r\n\t\t\tducksig = 1 - ((ramp - slope_out) / slope);\r\n\t\t\tducking = 1;\r\n\t\t\tinMiddle = 0;\r\n\t\t}\r\n\t}\r\n\telse { //if we are in the middle\r\n\t\tducksig = 1;\r\n\t\tducking = 0;\r\n\t\tinMiddle = 1;\r\n\t\tonSlopeIn = 0;\r\n\t\tonSlopeOut = 0;\r\n\t}\r\n}\r\n\r\n//clamping ducking signal into safe range\t\r\nducksig = clamp(ducksig, 0, 1);\r\n\t\r\n//manage playback from buffer:\r\n/*the channel offset attribute of the sample obejct is 0-based, while the general\r\nmc_channel is 1-based.*/\r\nbufout = sample(buf, ramp, mc_channel-1, index=\"samples\", channels=1);\r\n\r\n//saving ramp location as the previous one (needed for \"jump-detection\" above)\r\nramp_prev = ramp;\r\n\r\n//output signals:\r\nisplaying = playstate == 1; //only output audio when playing\r\nout1 = bufout*ducksig*isplaying;\r\nout2 = sampstoms(ramp); //playhead position in milliseconds\r\nout3 = (ramp - from) / (to - from); //loopsync (goes from 0 to 1 in the course of the loop)\r\n",
+					"code" : "/*\r\n\r\nSimple buffer playback tool made by Balint Laczko.\r\nOslo, 2019 - 2021.\r\n\r\n*/\r\n\r\n\r\n//utility: puts the playhead on the starting position based on the sign of the speed\r\nset_start(speed, from, to) {\r\n\tif (speed >= 0) {\r\n\t\treturn from;\r\n\t}\r\n\telse {\r\n\t\treturn to;\r\n\t}\r\n}\r\n\r\n//utility: keeps the loop edges sane (the minimum loop is 50 samples)\r\nclampEdges(from, to, bufferLength) {\r\n\tfrom = clamp(from, 0, to - 50);\r\n\tto = clamp(to, from + 50, bufferLength);\r\n\treturn from, to;\r\n}\r\n\r\n//our variables\t\r\nHistory ramp(0);\r\nHistory ramp_prev(0);\r\nHistory speed(0);\r\nHistory playstate(0);\r\nHistory from(0);\r\nHistory to(0);\r\nHistory ducking(0);\r\nHistory slope(0);\r\nHistory slope_in(0);\r\nHistory slope_out(0);\r\nHistory instantfade(0);\r\nHistory IFstart(0);\r\nHistory IFend(0);\r\nHistory ducksig(0);\r\nHistory stopping(0);\r\nHistory replaying(0);\r\nHistory seeking(0);\r\nHistory scrubbing(0);\r\nHistory minLength(200);\r\nHistory inMiddle(0);\r\nHistory onSlopeIn(0);\r\nHistory onSlopeOut(0);\r\nHistory fade(0);\r\nHistory bufLength(0);\r\n\r\n//Option to loop\r\nParam loop(0);\r\nParam buf_sr(44100);\r\nParam seek(0);\r\n\r\n//Get the buffer and its length\r\nBuffer buf(\"testy\");\r\nbufLength = dim(buf);\r\n\r\nif (change(in7) == 1) {\r\n\tplaystate = 1;\r\n\tseeking = 1;\r\n\tinstantfade = 1;\r\n}\r\n\r\n//If playing, increment playhead position by the speed\r\nif (playstate) {\r\n\tramp += speed * (buf_sr / samplerate);\r\n\tfrom, to = clampEdges(from, to, bufLength);\r\n\t//ramp += speed;\r\n\tif (change(bufLength)) { //if buffer length changes force restart\r\n\t\tfrom, to = clampEdges(from, to, bufLength);\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t}\r\n}\r\n\r\n//manage looping:\r\nif (playstate) { //if playing\r\n\tif (loop && !instantfade) { //if we should loop and we're not in the middle of an \"instantfade\"\r\n\t\tif (ramp > to || ramp < from) { //if we are outside the loop bounds\r\n\t\t\t//turn off these flags\r\n\t\t\tonSlopeIn = 0;\r\n\t\t\tonSlopeOut = 0;\r\n\t\t\t//the loop endpoint should not be too close the the start\r\n\t\t\tto = max(to, from + minLength);\r\n\t\t\t//make sure they make sense\r\n\t\t\tfrom, to = clampEdges(from, to, bufLength);\r\n\t\t\t//put the playhead on the starting position\r\n\t\t\tramp = set_start(speed, from, to);\r\n\t\t}\r\n\t}\r\n}\r\n\r\n\r\n//manage stop and play:\r\nif (change(in4) == 1) { //when we get a stopbang\r\n\tif (playstate) { //if we are playing\r\n\t\t//enable these flags\r\n\t\tstopping = 1;\r\n\t\tinstantfade = 1;\r\n\t}\r\n}\r\nelse if (change(in5) == 1) { //when we get a playbang\r\n\tif (playstate) { //if we are playing\r\n\t\tif (!replaying && !ducking) { //don't do anything if we are fading in/out (to avoid clicks)\r\n\t\t\t//enable these flags\r\n\t\t\treplaying = 1;\r\n\t\t\tinstantfade = 1;\r\n\t\t}\r\n\t}\r\n\telse { //if we are not playing\r\n\t\t//start playing (ie. enable \"playstate\" flag)\r\n\t\tplaystate = 1;\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t}\r\n}\r\nelse if (change(bufLength)) { //if buffer length changes force restart\r\n\t//put playhead to the starting point\r\n\tramp = set_start(speed, from, to);\r\n}\r\n\t\r\n//stopping and playing after instant fades:\r\nif (stopping) { //if \"stopping\" flag is active\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//stop playing, clear flags\r\n\t\tplaystate = 0;\r\n\t\tstopping = 0;\r\n\t}\r\n}\r\nelse if (replaying) { //if \"replaying\" flag is active (ie. when we are smashing the play button)\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t\t//keep playing and disable the \"replaying\" flag\r\n\t\tplaystate = 1;\r\n\t\treplaying = 0;\r\n\t}\r\n}\r\nelse if (seeking) { //if \"seeking\" flag is active (ie. when we received a seek message)\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//put playhead to the seeking point\r\n\t\tramp = seek / 1000 * buf_sr;\r\n\t\t//keep playing and disable the \"seeking\" flag\r\n\t\tplaystate = 1;\r\n\t\tseeking = 0;\r\n\t}\r\n}\r\nelse if (scrubbing) { //if \"scrubbing\" flag is active (ie. when we are changing loop points really quickly)\r\n\tif (!instantfade) { //when the \"instantfade\" finished fading\r\n\t\t//put playhead to the starting point\r\n\t\tramp = set_start(speed, from, to);\r\n\t\t//disable these flags\r\n\t\tinMiddle = 0;\r\n\t\tscrubbing = 0;\r\n\t\t//enable this, so we don't get clicks\r\n\t\tducking = 1;\r\n\t}\r\n}\r\n\r\n//scan speed:\r\nspeed = in1;\r\n\r\n//scan loop edges & fade time:\r\nif (!ducking && !instantfade) { //only scan it when not fading (to avoid clicks)\r\n\tif (change(in2) || change(in3)) {\r\n\t\t//from = mstosamps(in2);\r\n\t\tfrom = in2 / 1000 * buf_sr;\r\n\t\t//there should always be at least 50 samples \"in the middle\"\r\n\t\t//to = 50 + max(from + minLength, mstosamps(in3));\r\n\t\tto = 50 + max(from + minLength, in3 / 1000 * buf_sr); \r\n\t}\r\n\t//scan fade time (should be the same \"real\" length on all speeds\r\n\t//fade = in6 * speed;\r\n}\r\n\r\n//if we change buffer size (ie. when reading a new file), reset from to to file bounds\r\nif (change(dim(buf))) {\r\n\tfrom = 0;\r\n\tto = dim(buf);\r\n}\r\n\r\n//create fade-in/fade-out points (there should always be at least 50 samples \"unfaded\" in the middle)\r\nslope = min(minLength + mstosamps(fade), ((to - from) / 2) - 50);\r\nslope_in = from + slope;\r\nslope_out = to - slope;\r\n\r\nif (!ducking && !instantfade) {\r\n\t//scan fade time (should be the same \"real\" length on all speeds\r\n\t//to avoid stutters, always scan when playback just passed middle point or is stopped\r\n\tif (change(ramp > (from + ((to-from)/2))) == 1 || !playstate) {\r\n\t\tfade = in6 * speed;\r\n\t}\r\n}\r\n\r\n/*Tag the signal if it has just touched the fade-in/out points coming from the middle. \r\nThis is important for determining whether we \"jumped\" into the fading regions from the \r\nmiddle or we just \"rolled\" there normally*/\r\nif (inMiddle && ramp <= slope_in && ramp_prev > slope_in) {\r\n\tonSlopeIn = 1;\r\n}\r\nelse if (inMiddle && ramp >= slope_out && ramp_prev < slope_out) {\r\n\tonSlopeOut = 1;\r\n}\r\n\r\n//instantfade mechanism (always has fixed length):\r\nif (change(instantfade) == 1) { //when it gets activated\r\n\t//save where did we start the instantfade\r\n\tIFstart = ramp;\r\n}\r\nif (instantfade) { //while flag is active\r\n\tif (speed >= 0) { //if we are moving forward\r\n\t\t//create the endpoint of the fade\r\n\t\tIFend = IFstart + minLength;\r\n\t\t//calculate the fade and keep \"ducking\" flag on\r\n\t\tducksig = 1 - ((ramp - IFstart) / minLength);\r\n\t\tducking = 1;\r\n\t\tif (ramp > IFend) { //switch off when finished\r\n\t\t\tinstantfade = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t}\r\n\telse { //and if we are moving backwards\r\n\t\t//create the endpoint of the fade\r\n\t\tIFend = IFstart - minLength;\r\n\t\t//calculate the fade and keep \"ducking\" flag on\r\n\t\tducksig = 1 - ((IFstart - ramp) / minLength);\r\n\t\tducking = 1;\r\n\t\tif (ramp < IFend) { //switch off when finished\r\n\t\t\tinstantfade = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t}\r\n\t//keep these flags off while instantfading\r\n\tonSlopeIn = 0;\r\n\tonSlopeOut = 0;\r\n\tinMIddle = 0;\r\n}\r\n//...and regular fade mechanism (length is based on the input fade time):\r\nelse if (!stopping && !replaying && !scrubbing) {  //don't change it in the middle of fading (to avoid clicks)\r\n\tif (ramp < from || ramp > to) { //if we are outside the loop bounds\r\n\t\tif (playstate == 1) { //if playing\r\n\t\t\tif (loop) { //if in loop mode\r\n\t\t\t\t//enable these flags\r\n\t\t\t\tinstantfade = 1;\r\n\t\t\t\tscrubbing = 1;\r\n\t\t\t}\r\n\t\t\telse { //when not looping\r\n\t\t\t\t//just stop, since we \"reached\" the loop end\r\n\t\t\t\tplaystate = 0;\r\n\t\t\t}\r\n\t\t}\r\n\t\telse if (playstate == 0) { //if we are stopped\r\n\t\t\t//just clear the flags\r\n\t\t\tducksig = 0;\r\n\t\t\tducking = 0;\r\n\t\t}\r\n\t\t//if we are fading we are definitely not in the middle\r\n\t\tinMiddle = 0;\r\n\t}\r\n\telse if (ramp >= from && ramp <= slope_in) { //if we are fading in\r\n\t\tif (inMiddle && !onSlopeIn && playstate) { //if we somehow got to the middle area without touching the fade-in endpoint while playing\r\n\t\t\t//that means we jumped, so let's ask for an instantfade\r\n\t\t\tinstantfade = 1;\r\n\t\t\tscrubbing = 1;\r\n\t\t}\r\n\t\telse { //normally we just calculate the fading signal with some bookkeeping\r\n\t\t\tducksig = 1 - ((slope_in - ramp) / slope);\r\n\t\t\tducking = 1;\r\n\t\t\tinMiddle = 0;\r\n\t\t}\r\n\t}\r\n\telse if (ramp >= slope_out && ramp <= to) { //if we are fading out\r\n\t\tif (inMiddle && !onSlopeOut && playstate) { //if we somehow jumped back to the middle area without touching the fade-out starting point while playing\r\n\t\t\t//that means we jumped, so let's ask for an instantfade\r\n\t\t\tinstantfade = 1;\r\n\t\t\tscrubbing = 1;\r\n\t\t}\r\n\t\telse { //normally we just calculate the fading signal with some bookkeeping\r\n\t\t\tducksig = 1 - ((ramp - slope_out) / slope);\r\n\t\t\tducking = 1;\r\n\t\t\tinMiddle = 0;\r\n\t\t}\r\n\t}\r\n\telse { //if we are in the middle\r\n\t\tducksig = 1;\r\n\t\tducking = 0;\r\n\t\tinMiddle = 1;\r\n\t\tonSlopeIn = 0;\r\n\t\tonSlopeOut = 0;\r\n\t}\r\n}\r\n\r\n//clamping ducking signal into safe range\t\r\nducksig = clamp(ducksig, 0, 1);\r\n\t\r\n//manage playback from buffer:\r\n/*the channel offset attribute of the sample obejct is 0-based, while the general\r\nmc_channel is 1-based.*/\r\nbufout = sample(buf, ramp, mc_channel-1, index=\"samples\", channels=1);\r\n\r\n//saving ramp location as the previous one (needed for \"jump-detection\" above)\r\nramp_prev = ramp;\r\n\r\n//output signals:\r\nisplaying = playstate == 1; //only output audio when playing\r\nout1 = bufout*ducksig*isplaying;\r\n//out2 = sampstoms(ramp); //playhead position in milliseconds\r\nout2 = ramp / buf_sr * 1000;\r\nout3 = clamp((ramp - from) / (to - from), 0, 1); //loopsync (goes from 0 to 1 in the course of the loop)\r\nout4 = isplaying;\r\n",
 					"fontface" : 0,
-					"fontname" : "Lucida Console",
+					"fontname" : "<Monospaced>",
 					"fontsize" : 12.0,
 					"id" : "obj-5",
 					"maxclass" : "codebox",
-					"numinlets" : 6,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 1.0, 124.0, 700.400001999999972, 476.0 ]
+					"numinlets" : 7,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 11.0, 127.0, 700.400001999999972, 476.0 ]
 				}
 
 			}
@@ -141,7 +165,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1.0, 6.0, 129.0, 22.0 ],
+					"patching_rect" : [ 11.0, 9.0, 129.0, 22.0 ],
 					"text" : "in 1 @comment speed"
 				}
 
@@ -152,7 +176,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1.0, 612.0, 225.0, 22.0 ],
+					"patching_rect" : [ 11.0, 615.0, 225.0, 22.0 ],
 					"text" : "out 1 @comment \"Audio out (mc signal)\""
 				}
 
@@ -181,6 +205,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-5", 6 ],
+					"source" : [ "obj-3", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-5", 1 ]
 				}
@@ -190,6 +221,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-5", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-5", 3 ]
 				}
 
 			}
