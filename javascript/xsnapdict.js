@@ -40,3 +40,41 @@ function xsnapshot(from, to, ratio) {
     }
   }
 }
+
+function xmulti() {
+  var args = arrayfromargs(arguments);
+  var weights = args.map(function (elem, index) {
+    return elem * 0.99999;
+  });
+  var subsnapdicts = args.map(function (elem, index) {
+    return snaps.get(index + 1);
+  });
+  var subkeys = subsnapdicts[0].getkeys();
+  var values = subkeys.map(function (dictkey) {
+    var sourceInAll = subsnapdicts.map(function (thedict) {
+      return thedict.get(dictkey);
+    });
+    return sourceInAll;
+  });
+  var interpolatedValues = values.map(function (allPointsForSource, sourceInd) {
+    var appliedWeightsOnPoints = allPointsForSource.map(function (
+      point,
+      pointindex
+    ) {
+      var appliedWeightOnCoord = point.map(function (valOnAxis) {
+        return valOnAxis * weights[pointindex];
+      });
+      return appliedWeightOnCoord;
+    });
+    var interpolatedPoint = [0, 0, 0];
+    appliedWeightsOnPoints.map(function (point, pointInd) {
+      point.map(function (valOnAxis, axisInd) {
+        interpolatedPoint[axisInd] += valOnAxis;
+      });
+    });
+    return interpolatedPoint;
+  });
+  interpolatedValues.map(function (interPoint, sourceIndex) {
+    outlet(0, subkeys[sourceIndex], interPoint);
+  });
+}
