@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,7 +37,31 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 326.0, 463.0, 209.0, 20.0 ],
+					"text" : "also available as abstraction using JS"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 383.5, 485.0, 94.0, 22.0 ],
+					"text" : "bl.gest.capture_"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-46",
 					"maxclass" : "message",
@@ -126,12 +150,12 @@
 				"box" : 				{
 					"fontname" : "Ableton Sans",
 					"id" : "obj-7",
-					"linecount" : 6,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 25.0, 126.0, 510.0, 93.0 ],
-					"text" : "This is a generic tool to sample any kind of data stream and output it as a coll, where the coll indices represent the elapsed time in milliseconds. This is done by a JS script, so the timing of the samples will not be as accurate as if it was a gen script, but for general purposes it is still pretty good. It can also come handy when we don't know the structure or type of the data beforehand, the object doesn't require that the number or type of the features remain the same throughout the recording (\"anything goes\").",
+					"patching_rect" : [ 25.0, 126.0, 510.0, 64.0 ],
+					"text" : "This is a generic tool to sample any kind of data stream and output it as a coll, where the coll indices represent the elapsed time in milliseconds. It can also come handy when we don't know the structure or type of the data beforehand, the object doesn't require that the number or type of the features remain the same throughout the recording (\"anything goes\").",
 					"textcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ]
 				}
 
@@ -393,7 +417,11 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bl.gest.capture.maxpat",
+				"name" : "bl.gest.capture.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "bl.gest.capture_.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
@@ -401,8 +429,8 @@
 			}
 , 			{
 				"name" : "gestureCapture.js",
-				"bootpath" : "~/Documents/Max 8/Library/JS",
-				"patcherrelativepath" : "../../../Library/JS",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

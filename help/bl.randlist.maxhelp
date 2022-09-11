@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-5",
@@ -53,11 +54,11 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 214.0, 103.0, 22.0 ],
-					"text" : "bl.randlist 10 1 10"
+					"patching_rect" : [ 10.0, 214.0, 262.0, 22.0 ],
+					"text" : "bl.randlist @length 10 @from 1 @to 10 @sort 1"
 				}
 
 			}
@@ -68,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 274.0, 72.0, 22.0 ],
+					"patching_rect" : [ 10.0, 412.0, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -79,12 +80,12 @@
 					"bubblepoint" : 0.07,
 					"fontname" : "Ableton Sans",
 					"id" : "obj-10",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 362.0, 214.0, 130.0, 68.0 ],
-					"text" : "args:\n#1: size of the list\n#2: range minimum\n#3: range maximum"
+					"patching_rect" : [ 278.0, 214.0, 201.0, 82.0 ],
+					"text" : "attributes:\n@length: length of the list\n@from: range minimum\n@to: range maximum\n@sort: whether to sort the list"
 				}
 
 			}
@@ -96,7 +97,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 233.0, 185.0, 24.0, 24.0 ]
+					"patching_rect" : [ 55.5, 327.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -104,11 +105,11 @@
 				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 214.0, 127.0, 22.0 ],
-					"text" : "bl.randlist 10 -100 100"
+					"patching_rect" : [ 55.5, 356.0, 286.0, 22.0 ],
+					"text" : "bl.randlist @length 10 @from -100 @to 100 @sort 1"
 				}
 
 			}
@@ -120,7 +121,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 124.0, 185.0, 24.0, 24.0 ]
+					"patching_rect" : [ 27.5, 256.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -128,11 +129,11 @@
 				"box" : 				{
 					"id" : "obj-9",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 124.0, 214.0, 101.0, 22.0 ],
-					"text" : "bl.randlist 10 -4 3"
+					"patching_rect" : [ 27.5, 285.0, 214.0, 22.0 ],
+					"text" : "bl.randlist @length 10 @from -4 @to 3"
 				}
 
 			}
@@ -140,13 +141,12 @@
 				"box" : 				{
 					"dontreplace" : 1,
 					"id" : "obj-6",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 10.0, 315.0, 372.0, 36.0 ],
-					"text" : "-3.316935 -3.285236 -2.034882 -1.977653 -1.663994 0.851809 1.957561 2.736529 2.786029 2.819318"
+					"patching_rect" : [ 10.0, 453.0, 537.0, 22.0 ],
+					"text" : "-54.87672 -0.27792 18.48012 33.53276 41.637 46.97842 65.9052 73.124 80.28874 98.5685"
 				}
 
 			}
@@ -154,12 +154,12 @@
 				"box" : 				{
 					"fontname" : "Ableton Sans",
 					"id" : "obj-7",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 111.0, 517.0, 35.0 ],
-					"text" : "The abstraction generates a list of float numbers of an arbitrary size with the first argument being the size of the list, the second being the bottom of the range and the third being the top.",
+					"patching_rect" : [ 10.0, 111.0, 517.0, 50.0 ],
+					"text" : "The external generates a list of float numbers of an arbitrary size with the @length attribute defining the size of the list, the @from attribute the bottom of the range and the@to the top. Optionally sort the output using the @sort attribute.",
 					"textcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ]
 				}
 
@@ -241,11 +241,8 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bl.randlist.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "bl.randlist.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0

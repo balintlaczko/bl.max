@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 3,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 930.0, 586.0 ],
+		"rect" : [ 99.0, 100.0, 930.0, 586.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,7 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-7",
@@ -50,13 +51,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 930.0, 560.0 ],
+						"rect" : [ 99.0, 126.0, 930.0, 560.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,6 +85,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"bubble" : 1,
@@ -148,7 +150,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 3,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -181,6 +183,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"comment" : "",
@@ -654,12 +657,11 @@
 									"bubble" : 1,
 									"bubbleside" : 2,
 									"id" : "obj-17",
-									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 657.0, 427.5, 257.0, 67.0 ],
-									"text" : "Double-click to view recorded gestures. NB: the last entry is always empty (it is reserved for the next gesture to be recorded)."
+									"patching_rect" : [ 672.0, 454.5, 220.0, 39.0 ],
+									"text" : "Double-click to view recorded gestures."
 								}
 
 							}
@@ -686,8 +688,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.285714285714221, 65.0, 257.0, 24.0 ],
-									"text" : "5) Launch playback of first clip by typing \"1\""
+									"patching_rect" : [ 551.0, 66.0, 257.0, 24.0 ],
+									"text" : "4) Launch playback of first clip by typing \"1\""
 								}
 
 							}
@@ -700,7 +702,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.285714285714221, 66.0, 118.0, 24.0 ],
-									"text" : "4) Switch on play"
+									"text" : "3) Switch on play"
 								}
 
 							}
@@ -713,7 +715,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 265.285714285714221, 319.0, 124.0, 24.0 ],
-									"text" : "3) SWOOOSHHH!"
+									"text" : "2) SWOOOSHHH!"
 								}
 
 							}
@@ -726,29 +728,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 6.5, 403.0, 112.0, 39.0 ],
-									"text" : "2) switch on record"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-15",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 87.0, 128.0, 118.0, 24.0 ],
-									"text" : "1) switch on DSP"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 116.5, 45.0, 45.0 ]
+									"text" : "1) switch on record"
 								}
 
 							}
@@ -1036,7 +1016,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "int", "int" ],
+									"outlettype" : [ "int", "" ],
 									"patching_rect" : [ 196.285714285714221, 497.0, 134.0, 22.0 ],
 									"text" : "bl.gest.record~ xypad 2"
 								}
@@ -1274,7 +1254,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1308,6 +1288,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Ableton Sans",
@@ -1435,38 +1416,13 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"id" : "obj-19",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 766.0, 360.5, 153.0, 38.0 ],
-									"text" : "DSP should be on for this device to function!",
-									"textcolor" : [ 0.843137254901961, 0.0, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 716.5, 357.0, 45.0, 45.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
 									"bubbleside" : 2,
 									"id" : "obj-17",
-									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 657.0, 427.5, 257.0, 67.0 ],
-									"text" : "Double-click to view recorded gestures. NB: the last entry is always empty (it is reserved for the next gesture to be recorded)."
+									"patching_rect" : [ 674.0, 455.0, 223.0, 39.0 ],
+									"text" : "Double-click to view recorded gestures. "
 								}
 
 							}
@@ -1723,7 +1679,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1757,6 +1713,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Ableton Sans",
@@ -1793,30 +1750,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 9.550287227760165, 378.0, 70.0 ],
 									"text" : "bl.gest.record~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-19",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 766.0, 402.0, 153.0, 38.0 ],
-									"text" : "DSP should be on for this device to function!",
-									"textcolor" : [ 0.843137254901961, 0.0, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 716.5, 398.5, 45.0, 45.0 ]
 								}
 
 							}
@@ -2052,7 +1985,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "int", "int" ],
+									"outlettype" : [ "int", "" ],
 									"patching_rect" : [ 211.5, 458.0, 162.0, 22.0 ],
 									"text" : "bl.gest.record~ multislider 10"
 								}
@@ -2142,15 +2075,8 @@
 			}
 , 			{
 				"name" : "recordGesture.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "../../../Library/gendsp",
-				"type" : "gDSP",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "listpoke.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "../../../Library/gendsp",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/code",
+				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}
@@ -2163,8 +2089,8 @@
 			}
 , 			{
 				"name" : "playGesture.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "../../../Library/gendsp",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/code",
+				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}

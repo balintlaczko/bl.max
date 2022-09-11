@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 44.0, 100.0, 614.0, 618.0 ],
+		"rect" : [ 57.0, 101.0, 614.0, 618.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"hidden" : 1,
@@ -50,7 +51,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -83,6 +84,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-22",
@@ -283,12 +285,12 @@
 				"box" : 				{
 					"fontname" : "Ableton Sans",
 					"id" : "obj-7",
-					"linecount" : 6,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 111.0, 584.0, 93.0 ],
-					"text" : "This abstraction can be in many ways considered to be similar to a groove~, with some enhancements in certain areas. It is notably better when it comes to \"scrubbing\", ie. changing the loop start- and end-points quickly and erratically. There is built-in option for fading around loop bounds, and there is also a quick fading mechanism to avoid clicks when scrubbing/jumping to another region of the buffer. \nNote: be careful with samplerates, this won't adapt to files having different SR from the current SR of the audio interface.",
+					"patching_rect" : [ 10.0, 111.0, 584.0, 64.0 ],
+					"text" : "This abstraction can be in many ways considered to be similar to a groove~, with some enhancements in certain areas. It is notably better when it comes to \"scrubbing\", ie. changing the loop start- and end-points quickly and erratically. There is built-in option for fading around loop bounds, and there is also a quick fading mechanism to avoid clicks when scrubbing/jumping to another region of the buffer. ",
 					"textcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ]
 				}
 
@@ -330,12 +332,12 @@
 					"patching_rect" : [ 227.5, 325.0, 50.0, 22.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "number",
-							"parameter_type" : 3,
-							"parameter_longname" : "number",
+							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
 							"parameter_invisible" : 1,
-							"parameter_initial" : [ 1 ]
+							"parameter_longname" : "number",
+							"parameter_shortname" : "number",
+							"parameter_type" : 3
 						}
 
 					}
@@ -355,13 +357,13 @@
 					"patching_rect" : [ 8.5, 293.0, 24.0, 24.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "toggle",
 							"parameter_enum" : [ "off", "on" ],
-							"parameter_type" : 2,
-							"parameter_longname" : "toggle",
+							"parameter_initial" : [ 1 ],
 							"parameter_initial_enable" : 1,
+							"parameter_longname" : "toggle",
 							"parameter_mmax" : 1,
-							"parameter_initial" : [ 1 ]
+							"parameter_shortname" : "toggle",
+							"parameter_type" : 2
 						}
 
 					}
@@ -484,12 +486,12 @@
 					"patching_rect" : [ 162.5, 398.0, 48.0, 136.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_longname" : "audio out",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
 							"parameter_shortname" : "audio out",
 							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "audio out",
-							"parameter_mmax" : 6.0
+							"parameter_unitstyle" : 4
 						}
 
 					}
@@ -621,26 +623,27 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-2" : [ "audio out", "audio out", 0 ],
 			"obj-15" : [ "toggle", "toggle", 0 ],
 			"obj-18" : [ "number", "number", 0 ],
+			"obj-2" : [ "audio out", "audio out", 0 ],
 			"parameterbanks" : 			{
 
 			}
-
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "bl.looper~.maxpat",
-				"bootpath" : "~/Documents/Max 8/Library",
-				"patcherrelativepath" : ".",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
+				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "bl.simpleLooper.gendsp",
-				"bootpath" : "~/Documents/Max 8/Library/gendsp",
-				"patcherrelativepath" : "./gendsp",
+				"bootpath" : "~/Documents/Max 8/Packages/bl/code",
+				"patcherrelativepath" : "../code",
 				"type" : "gDSP",
 				"implicit" : 1
 			}

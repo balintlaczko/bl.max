@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 3,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"bubble" : 1,
@@ -57,7 +58,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 116.0, 251.0, 99.0, 24.0 ],
-					"text" : "reset memory"
+					"text" : "clear memory"
 				}
 
 			}
@@ -68,7 +69,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 368.0, 208.0, 131.5, 22.0 ],
+					"patching_rect" : [ 368.0, 208.0, 246.5, 22.0 ],
 					"text" : "b 2"
 				}
 
@@ -80,8 +81,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 480.5, 242.0, 35.0, 22.0 ],
-					"text" : "reset"
+					"patching_rect" : [ 595.5, 242.0, 35.0, 22.0 ],
+					"text" : "clear"
 				}
 
 			}
@@ -101,11 +102,11 @@
 				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 368.0, 242.0, 103.0, 22.0 ],
-					"text" : "bl.randlist 10 0. 1."
+					"patching_rect" : [ 368.0, 242.0, 216.0, 22.0 ],
+					"text" : "bl.randlist @length 10 @from 0. @to 1."
 				}
 
 			}
@@ -118,7 +119,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 382.0, 338.0, 134.0, 22.0 ],
-					"text" : "0.113301 0.970055"
+					"text" : "0.025409 0.898254"
 				}
 
 			}
@@ -142,7 +143,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "list" ],
 					"patching_rect" : [ 368.0, 291.0, 69.0, 22.0 ],
 					"text" : "bl.getrange"
 				}
@@ -168,7 +169,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 81.0, 251.0, 35.0, 22.0 ],
-					"text" : "reset"
+					"text" : "clear"
 				}
 
 			}
@@ -217,7 +218,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 37.0, 338.0, 134.0, 22.0 ],
-					"text" : "0.475 0.758"
+					"text" : "0.164 0.522"
 				}
 
 			}
@@ -241,7 +242,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
+					"outlettype" : [ "list" ],
 					"patching_rect" : [ 23.0, 291.0, 69.0, 22.0 ],
 					"text" : "bl.getrange"
 				}
@@ -256,7 +257,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 111.0, 510.0, 35.0 ],
-					"text" : "The abstraction keeps track of the running range of a number stream. The numbers can be passed as integers, floats or lists.",
+					"text" : "The external keeps track of the running range of a number stream. The numbers can be passed as integers, floats or lists.",
 					"textcolor" : [ 0.423529411764706, 0.423529411764706, 0.423529411764706, 1.0 ]
 				}
 
@@ -391,18 +392,12 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "bl.getrange.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "bl.getrange.mxe64",
+				"type" : "mx64"
 			}
 , 			{
-				"name" : "bl.randlist.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "bl.randlist.mxe64",
+				"type" : "mx64"
 			}
  ],
 		"autosave" : 0
