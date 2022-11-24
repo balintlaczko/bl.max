@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-8",
@@ -44,7 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 555.0, 10.550287227760165, 285.0, 34.0 ],
+					"patching_rect" : [ 555.0, 10.550287227760165, 289.0, 34.0 ],
 					"text" : "This abstraction is dependent on the Spat5 package by IRCAM (not affiliated) and won't work without it.",
 					"textcolor" : [ 0.843137254901961, 0.0, 0.0, 1.0 ]
 				}
@@ -314,10 +315,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 57.0, 342.0, 119.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"parameter_enable" : 0
-					}
-,
 					"text" : "spat5.speaker.layout"
 				}
 
@@ -343,8 +340,9 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
-					"name" : "spat5.known.speakers.list.maxpat",
+					"name" : "spat5.known.speakersetups.maxpat",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
@@ -364,6 +362,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-23",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"name" : "bl.3dviewer.maxpat",
 					"numinlets" : 1,
@@ -378,16 +377,6 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
-					"order" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-6", 0 ],
-					"midpoints" : [ 66.5, 310.0, 22.5, 310.0 ],
-					"order" : 1,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -513,35 +502,39 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-23::obj-21" : [ "live.text[19]", "live.text", 0 ],
-			"obj-23::obj-10" : [ "live.text[22]", "live.text", 0 ],
-			"obj-23::obj-77" : [ "live.numbox[2]", "live.numbox", 0 ],
 			"obj-1::obj-21" : [ "live.menu", "live.menu", 0 ],
-			"obj-23::obj-83" : [ "live.text[21]", "live.text", 0 ],
+			"obj-23::obj-10" : [ "live.text[22]", "live.text", 0 ],
+			"obj-23::obj-17" : [ "live.text[16]", "live.text", 0 ],
+			"obj-23::obj-21" : [ "live.text[19]", "live.text", 0 ],
+			"obj-23::obj-5" : [ "live.text[23]", "live.text", 0 ],
+			"obj-23::obj-6" : [ "live.text[20]", "live.text", 0 ],
 			"obj-23::obj-66" : [ "live.text[17]", "live.text", 0 ],
 			"obj-23::obj-7" : [ "live.text[18]", "live.text", 0 ],
-			"obj-23::obj-5" : [ "live.text[23]", "live.text", 0 ],
-			"obj-23::obj-17" : [ "live.text[16]", "live.text", 0 ],
-			"obj-23::obj-6" : [ "live.text[20]", "live.text", 0 ],
+			"obj-23::obj-77" : [ "live.numbox[2]", "live.numbox", 0 ],
+			"obj-23::obj-83" : [ "live.text[21]", "live.text", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
-				"obj-23::obj-21" : 				{
-					"parameter_longname" : "live.text[19]"
-				}
-,
 				"obj-23::obj-10" : 				{
 					"parameter_longname" : "live.text[22]"
 				}
 ,
-				"obj-23::obj-77" : 				{
-					"parameter_longname" : "live.numbox[2]"
+				"obj-23::obj-17" : 				{
+					"parameter_longname" : "live.text[16]"
 				}
 ,
-				"obj-23::obj-83" : 				{
-					"parameter_longname" : "live.text[21]"
+				"obj-23::obj-21" : 				{
+					"parameter_longname" : "live.text[19]"
+				}
+,
+				"obj-23::obj-5" : 				{
+					"parameter_longname" : "live.text[23]"
+				}
+,
+				"obj-23::obj-6" : 				{
+					"parameter_longname" : "live.text[20]"
 				}
 ,
 				"obj-23::obj-66" : 				{
@@ -552,86 +545,71 @@
 					"parameter_longname" : "live.text[18]"
 				}
 ,
-				"obj-23::obj-5" : 				{
-					"parameter_longname" : "live.text[23]"
+				"obj-23::obj-77" : 				{
+					"parameter_longname" : "live.numbox[2]"
 				}
 ,
-				"obj-23::obj-17" : 				{
-					"parameter_longname" : "live.text[16]"
-				}
-,
-				"obj-23::obj-6" : 				{
-					"parameter_longname" : "live.text[20]"
+				"obj-23::obj-83" : 				{
+					"parameter_longname" : "live.text[21]"
 				}
 
 			}
-
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "bl.3dviewer.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
+				"bootpath" : "~/Documents/Max 8/Packages/bl.max/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "poly-sourceLabels.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers/utility",
-				"patcherrelativepath" : "../patchers/utility",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "poly-speakerLabels.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers/utility",
-				"patcherrelativepath" : "../patchers/utility",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "bl.autobp.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/patchers",
+				"bootpath" : "~/Documents/Max 8/Packages/bl.max/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "makeIntoBp.js",
-				"bootpath" : "~/Documents/Max 8/Packages/bl/javascript",
+				"bootpath" : "~/Documents/Max 8/Packages/bl.max/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "spat5.known.speakers.list.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/spat5-x64/patchers",
-				"patcherrelativepath" : "../../spat5-x64/patchers",
+				"name" : "poly-sourceLabels.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/bl.max/patchers/utility",
+				"patcherrelativepath" : "../patchers/utility",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "spat5.knn.mxe64",
-				"type" : "mx64"
-			}
-, 			{
-				"name" : "spat5.osc.route.mxe64",
-				"type" : "mx64"
+				"name" : "poly-speakerLabels.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/bl.max/patchers/utility",
+				"patcherrelativepath" : "../patchers/utility",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "spat5.converter.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "spat5.osc.unslashify.mxe64",
+				"name" : "spat5.knn.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "spat5.transform.mxe64",
-				"type" : "mx64"
+				"name" : "spat5.known.speakersetups.maxpat",
+				"bootpath" : "~/Documents/Max 8/Packages/spat5-x64/patchers",
+				"patcherrelativepath" : "../../spat5-x64/patchers",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "spat5.osc.routepass.mxe64",
+				"name" : "spat5.oper.mxe64",
 				"type" : "mx64"
 			}
 , 			{
@@ -639,11 +617,23 @@
 				"type" : "mx64"
 			}
 , 			{
+				"name" : "spat5.osc.route.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "spat5.osc.routepass.mxe64",
+				"type" : "mx64"
+			}
+, 			{
+				"name" : "spat5.osc.unslashify.mxe64",
+				"type" : "mx64"
+			}
+, 			{
 				"name" : "spat5.speaker.layout.mxe64",
 				"type" : "mx64"
 			}
 , 			{
-				"name" : "spat5.oper.mxe64",
+				"name" : "spat5.transform.mxe64",
 				"type" : "mx64"
 			}
  ],
@@ -652,13 +642,13 @@
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -700,18 +690,18 @@
 , 			{
 				"name" : "Default M4L-1",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontface" : [ 1 ],
-					"fontsize" : [ 11.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
-						"proportion" : 0.39
+						"proportion" : 0.39,
+						"type" : "gradient"
 					}
-
+,
+					"fontface" : [ 1 ],
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 11.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -721,12 +711,12 @@
 				"name" : "Default Max7 Poletti",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
-						"proportion" : 0.39
+						"proportion" : 0.39,
+						"type" : "gradient"
 					}
 
 				}
@@ -737,17 +727,17 @@
 , 			{
 				"name" : "jbb",
 				"default" : 				{
-					"fontname" : [ "Arial" ],
-					"fontsize" : [ 9.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.376471, 0.384314, 0.4, 1.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
-						"proportion" : 0.39
+						"proportion" : 0.39,
+						"type" : "gradient"
 					}
-
+,
+					"fontname" : [ "Arial" ],
+					"fontsize" : [ 9.0 ]
 				}
 ,
 				"parentstyle" : "",
